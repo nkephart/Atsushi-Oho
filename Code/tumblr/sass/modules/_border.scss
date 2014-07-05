@@ -1,0 +1,12 @@
+﻿// border module
+
+@mixin border-tb($tcolor, $bcolor:$tcolor) {
+  border-top: solid 1px $tcolor;
+  border-bottom: solid 1px $bcolor;
+}
+
+@mixin border-lr($rcolor, $lcolor:$rcolor) {
+  border-right: solid 1px $rcolor;
+  border-left: solid 1px $lcolor;
+}
+

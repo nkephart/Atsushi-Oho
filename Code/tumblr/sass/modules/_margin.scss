@@ -1,0 +1,7 @@
+﻿// margin module
+
+@mixin margin($i, $j:$i, $k:$i, $l:$j) {
+  margin: $i*10+px $j*10+px $k*10+px $l*10+px;
+  margin: $i+rem $j+rem $k+rem $l+rem;
+}
+
