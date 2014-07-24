@@ -1,1 +1,42 @@
-// structure partial
+// Structure partial
+
+/* Header */
+
+header {
+}
+
+/* Navigation */
+
+nav {
+  @include clearfix;
+  ul {
+    float: left;
+    @include inline-block;
+    @include margin(0);
+    @include padding(0);
+    li {
+      @include padding(0,3.4,0,0);
+      @include inline-block;
+    }
+  }
+  .search-form {
+    float: right;
+    @include inline-block;
+  }
+}
+
+/* Footer */
+
+footer {
+  bottom: 0;
+  @include clearfix;
+  @include padding(2.1,0,3.4);
+  .copyright {
+    float: left;
+    text-align: center;
+  }
+  .top-button {
+    float: right;
+    text-align: center;
+  }
+}

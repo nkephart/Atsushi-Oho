@@ -1,5 +1,158 @@
-h1, h2, h3, h4, h5 {
-  font-family: Calluna-Regular; 
-  font-weight: normal; 
-  font-style: normal
+@charset "UTF-8";
+/* line 8, ../sass/partials/_base.scss */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 12, ../sass/partials/_base.scss */
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+/* line 17, ../sass/partials/_base.scss */
+body {
+  width: 700px;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 0px 13px 0px 13px;
+  padding: 0rem 1.3rem 0rem 1.3rem;
+}
+
+/* line 24, ../sass/partials/_base.scss */
+li {
+  list-style: none;
+}
+
+/* line 4, ../sass/modules/_placeholder.scss */
+input.placeholder, textarea.placeholder {
+  font-style: italic;
+}
+/* line 5, ../sass/modules/_placeholder.scss */
+input:-moz-placeholder, textarea:-moz-placeholder {
+  font-style: italic;
+}
+/* line 6, ../sass/modules/_placeholder.scss */
+input::-moz-placeholder, textarea::-moz-placeholder {
+  font-style: italic;
+}
+/* line 7, ../sass/modules/_placeholder.scss */
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  font-style: italic;
+}
+/* line 8, ../sass/modules/_placeholder.scss */
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  font-style: italic;
+}
+
+/* line 3, ../sass/partials/_contact-form.scss */
+.submit-message {
+  display: none;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+/* Header */
+/* Navigation */
+/* line 10, ../sass/partials/_structure.scss */
+nav {
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 12, ../sass/partials/_structure.scss */
+nav ul {
+  float: left;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  margin: 0px 0px 0px 0px;
+  margin: 0rem 0rem 0rem 0rem;
+  padding: 0px 0px 0px 0px;
+  padding: 0rem 0rem 0rem 0rem;
+}
+/* line 17, ../sass/partials/_structure.scss */
+nav ul li {
+  padding: 0px 34px 0px 0px;
+  padding: 0rem 3.4rem 0rem 0rem;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+/* line 22, ../sass/partials/_structure.scss */
+nav .search-form {
+  float: right;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+
+/* Footer */
+/* line 30, ../sass/partials/_structure.scss */
+footer {
+  bottom: 0;
+  overflow: hidden;
+  *zoom: 1;
+  padding: 21px 0px 34px 0px;
+  padding: 2.1rem 0rem 3.4rem 0rem;
+}
+/* line 34, ../sass/partials/_structure.scss */
+footer .copyright {
+  float: left;
+  text-align: center;
+}
+/* line 38, ../sass/partials/_structure.scss */
+footer .top-button {
+  float: right;
+  text-align: center;
+}
+
+/* line 3, ../sass/partials/_typography.scss */
+h1, h1 a, h2, h2 a {
+  font-family: Calluna-Regular, Times New Roman, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 9, ../sass/partials/_typography.scss */
+a, form, p, span, td, ul, h3, h4, h5 {
+  font-family: Lato, Helvetica Neun, Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 15, ../sass/partials/_typography.scss */
+a, form, p, span, td, ul, h3, h4, h5 {
+  font-size: 1.3rem;
+  line-height: 1.615;
+  text-decoration: none;
+  color: #4c4c4c;
+}
+
+/* line 23, ../sass/partials/_typography.scss */
+h1, h1 a {
+  font-size: 8.9rem;
+  color: #5769a0;
+  text-align: center;
+}
+
+/* line 33, ../sass/partials/_typography.scss */
+h2, h2 a {
+  font-size: 3.4rem;
+  color: #c58c52;
+}
+
+/* line 42, ../sass/partials/_typography.scss */
+.subtitle {
+  font-size: 3.4rem;
 }

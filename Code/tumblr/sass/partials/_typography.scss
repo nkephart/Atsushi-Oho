@@ -1,1 +1,44 @@
-// typography partial
+// Typography partial
+
+%text-serif {
+  font-family: Calluna-Regular, Times New Roman, serif; 
+  font-weight: normal; 
+  font-style: normal;  
+}
+
+%text-sans-serif {
+  font-family: Lato, Helvetica Neun, Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+a, form, p, span, td, ul, h3, h4, h5 {
+  @extend %text-sans-serif;
+  font-size: $font-size-body;
+  line-height: 1.615;
+  text-decoration: none;
+  color: $font-color-body;
+}
+
+h1 {
+  @extend %text-serif;
+  font-size: $font-size-title;
+  color: $font-color-title;
+  text-align: center;
+  a {
+    @extend h1;
+  }
+}
+
+h2 {
+  @extend %text-serif;
+  font-size: $font-size-heading;
+  color: $font-color-heading;
+  a {
+    @extend h2;
+  }
+}
+
+.subtitle {
+  font-size: $font-size-heading;
+}

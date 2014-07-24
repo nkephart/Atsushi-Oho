@@ -1,4 +1,4 @@
-﻿// border module
+// Border module
 
 @mixin border-tb($tcolor, $bcolor:$tcolor) {
   border-top: solid 1px $tcolor;
@@ -9,4 +9,3 @@
   border-right: solid 1px $rcolor;
   border-left: solid 1px $lcolor;
 }
-

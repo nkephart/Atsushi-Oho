@@ -1,7 +1,6 @@
-﻿// padding module
+// Padding module
 
 @mixin padding($i, $j:$i, $k:$i, $l:$j) {
   padding: $i*10+px $j*10+px $k*10+px $l*10+px;
   padding: $i+rem $j+rem $k+rem $l+rem;
 }
-
