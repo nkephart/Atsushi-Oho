@@ -29,11 +29,11 @@
         <input type="hidden" name="draftResponse" value="[,,&quot;5969303432463856438&quot;]">
         <input type="hidden" name="pageHistory" value="0">
         <input type="hidden" name="fbzx" value="5969303432463856438">
-        <input type="submit" name="submit" value="Submit" id="ss-submit">
+        <button type="submit" name="submit" id="ss-submit">Submit</button>
       </section>
     </form>
   </section>
-  <span class="submit-message">Message sent!</span>
+  <span class="submit-message">Your message has been sent!</span>
 </article>
 <!-- jQuery libs and scripts -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -47,7 +47,7 @@ function checkForm(){
     alert("Please input the required fields");
   }
   else if(document.forms['ss-form']['entry.441788654'].value.search(emailRegEx)==-1){
-    alert("Invalid e-mail address format");
+    alert("Invalid E-mail address format");
   }
   else{
     status=true;

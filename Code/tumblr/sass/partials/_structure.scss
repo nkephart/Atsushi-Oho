@@ -29,14 +29,15 @@ nav {
 
 footer {
   bottom: 0;
-  @include clearfix;
   @include padding(2.1,0,3.4);
-  .copyright {
-    float: left;
-    text-align: center;
-  }
-  .top-button {
-    float: right;
-    text-align: center;
+  ul.footer-notes {
+    text-align: right;
+    li {
+      @include inline-block;
+      @include margin(0,0,0,1.3);
+    }
+    li:last-child {
+      text-transform: uppercase;
+    }
   }
 }
