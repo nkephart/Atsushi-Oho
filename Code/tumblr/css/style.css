@@ -8,20 +8,18 @@
 
 /* line 12, ../sass/partials/_base.scss */
 html {
+  width: 100%;
   height: 100%;
   font-size: 62.5%;
 }
 
-/* line 17, ../sass/partials/_base.scss */
+/* line 18, ../sass/partials/_base.scss */
 body {
-  width: 700px;
+  width: auto;
   min-height: 100%;
-  margin: 0 auto;
-  padding: 0px 13px 0px 13px;
-  padding: 0rem 1.3rem 0rem 1.3rem;
 }
 
-/* line 24, ../sass/partials/_base.scss */
+/* line 23, ../sass/partials/_base.scss */
 li {
   list-style: none;
 }
@@ -55,13 +53,40 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 }
 
 /* Header */
-/* Navigation */
+/* line 5, ../sass/partials/_structure.scss */
+header {
+  width: 100%;
+  height: 210px;
+}
+
 /* line 10, ../sass/partials/_structure.scss */
+#header-container {
+  width: 700px;
+  height: 140px;
+  margin: 0 auto;
+  padding: 0px 13px 0px 13px;
+  padding: 0rem 1.3rem 0rem 1.3rem;
+  background-color: #d6dae8;
+}
+
+/* line 18, ../sass/partials/_structure.scss */
+#nav-container {
+  width: 700px;
+  height: 70px;
+  margin: 0 auto;
+  padding: 0px 13px 0px 13px;
+  padding: 0rem 1.3rem 0rem 1.3rem;
+  background-color: #e8e7e2;
+}
+
+/* line 26, ../sass/partials/_structure.scss */
 nav {
+  width: 100%;
+  background-color: inherit;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 12, ../sass/partials/_structure.scss */
+/* line 30, ../sass/partials/_structure.scss */
 nav ul {
   float: left;
   display: -moz-inline-stack;
@@ -75,8 +100,9 @@ nav ul {
   padding: 0px 0px 0px 0px;
   padding: 0rem 0rem 0rem 0rem;
 }
-/* line 17, ../sass/partials/_structure.scss */
+/* line 35, ../sass/partials/_structure.scss */
 nav ul li {
+  text-transform: uppercase;
   padding: 0px 34px 0px 0px;
   padding: 0rem 3.4rem 0rem 0rem;
   display: -moz-inline-stack;
@@ -86,7 +112,7 @@ nav ul li {
   zoom: 1;
   *display: inline;
 }
-/* line 22, ../sass/partials/_structure.scss */
+/* line 41, ../sass/partials/_structure.scss */
 nav .search-form {
   float: right;
   display: -moz-inline-stack;
@@ -97,19 +123,35 @@ nav .search-form {
   *display: inline;
 }
 
-/* Footer */
-/* line 30, ../sass/partials/_structure.scss */
-footer {
-  bottom: 0;
-  padding: 21px 0px 34px 0px;
-  padding: 2.1rem 0rem 3.4rem 0rem;
+/* Article */
+/* line 49, ../sass/partials/_structure.scss */
+article {
+  width: 700px;
+  margin: 0 auto;
+  padding: 0px 13px 0px 13px;
+  padding: 0rem 1.3rem 0rem 1.3rem;
 }
-/* line 33, ../sass/partials/_structure.scss */
-footer ul.footer-notes {
+
+/* Footer */
+/* line 57, ../sass/partials/_structure.scss */
+footer {
+  width: 100%;
+  bottom: 0;
+}
+
+/* line 62, ../sass/partials/_structure.scss */
+#footer-container {
+  width: 700px;
+  margin: 0 auto;
+  padding: 21px 13px 34px 13px;
+  padding: 2.1rem 1.3rem 3.4rem 1.3rem;
+}
+/* line 66, ../sass/partials/_structure.scss */
+#footer-container ul.footer-notes {
   text-align: right;
 }
-/* line 35, ../sass/partials/_structure.scss */
-footer ul.footer-notes li {
+/* line 68, ../sass/partials/_structure.scss */
+#footer-container ul.footer-notes li {
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -119,8 +161,8 @@ footer ul.footer-notes li {
   margin: 0px 0px 0px 13px;
   margin: 0rem 0rem 0rem 1.3rem;
 }
-/* line 39, ../sass/partials/_structure.scss */
-footer ul.footer-notes li:last-child {
+/* line 72, ../sass/partials/_structure.scss */
+#footer-container ul.footer-notes li:last-child {
   text-transform: uppercase;
 }
 

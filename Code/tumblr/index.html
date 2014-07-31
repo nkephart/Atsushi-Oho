@@ -59,21 +59,24 @@
 <body>
 <div id="top-ancher"></div>
 <header role="banner">
-  <h1><a href="#top-ancher">Atsushi OHO</a></h1>
-  <span class="subtitle">於保 淳</span>
+  <div id="title-container">
+    <h1><a href="#top-ancher">Atsushi OHO</a></h1>
+  </div>
+  <div id="nav-container">
+    <nav role="navigation">
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <form action="/search" method="get" id="" class="search-form">
+        <input type="text" placeholder="Search contents..." id="" name="" value="{SearchQuery}" />
+      </form>
+    </nav>
+  </div>
 </header>
-<nav role="navigation">
-  <ul>
-    <li><a href="#about">About Me</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#teaching">Teaching</a></li>
-    <li><a href="#cv">CV</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <form action="/search" method="get" id="" class="search-form">
-	<input type="text" placeholder="Search contents..." id="" name="" value="{SearchQuery}" />
-  </form>
-</nav>
 <article role="main">
   <section id="about">
     <h2>About Me</h2>
@@ -218,11 +221,13 @@
   </section>
 </article>
 <footer role="contentinfo">
-  <ul class="footer-notes">
-    <li>Copyright&nbsp;&copy;&nbsp;{CopyrightYears}&nbsp;<a href="http://atsushioho-draft.tumblr.com">Atsushi&nbsp;OHO</a></li>
-    <li>|</li>
-    <li><a href="#top-ancher">Back to top</a></li>
-  </ul>
+  <div id="footer-container">
+    <ul class="footer-notes">
+      <li>Copyright&nbsp;&copy;&nbsp;{CopyrightYears}&nbsp;<a href="http://atsushioho-draft.tumblr.com">Atsushi&nbsp;OHO</a></li>
+      <li>|</li>
+      <li><a href="#top-ancher">Back to top</a></li>
+    </ul>
+  </div>
 </footer>
 <!-- jQuery libs and scripts -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
