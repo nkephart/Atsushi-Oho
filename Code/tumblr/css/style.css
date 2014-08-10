@@ -53,14 +53,22 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 
 /* Header */
 /* line 5, ../sass/partials/_structure.scss */
-header {
+#header-container {
   height: 100%;
   width: 230px;
   position: fixed;
   top: 0;
   right: 0;
-  text-align: center;
   border-left: solid 1px #eee;
+  -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* line 15, ../sass/partials/_structure.scss */
+header {
+  height: 100%;
+  text-align: center;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
@@ -69,16 +77,23 @@ header {
   align-items: center;
   -webkit-justify-content: center;
   justify-content: center;
-  -moz-box-shadow: 0px, 10px, rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px, 10px, rgba(0, 0, 0, 0.3);
-  box-shadow: 0px, 10px, rgba(0, 0, 0, 0.3);
 }
 
-/* line 20, ../sass/partials/_structure.scss */
-img.portrait {
+/* line 24, ../sass/partials/_structure.scss */
+a.portrait {
   height: 128px;
   width: 128px;
   border: solid 1px #eee;
+  background: url("../img/portrait_sq_128.png") no-repeat 2px 2px;
+  -moz-background-size: 128px;
+  -o-background-size: 128px;
+  -webkit-background-size: 128px;
+  background-size: 128px;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
   margin: 0px 0px 13px 0px;
   margin: 0rem 0rem 1.3rem 0rem;
   padding: 2px 2px 2px 2px;
@@ -88,71 +103,75 @@ img.portrait {
   border-radius: 50%;
   -webkit-order: -1;
   order: -1;
-  -webkit-flex: 0;
-  flex: 0;
+  -webkit-flex: none;
+  flex: none;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
-
-/* line 32, ../sass/partials/_structure.scss */
-#title h1, #title h1 a, h1 #title a {
-  margin: 8px 0px 0px 0px;
-  margin: 0.8rem 0rem 0rem 0rem;
-}
-/* line 35, ../sass/partials/_structure.scss */
-#title:after {
-  display: block;
-  content: "〜";
-  margin: 13px 0px 13px 0px;
-  margin: 1.3rem 0rem 1.3rem 0rem;
+/* line 37, ../sass/partials/_structure.scss */
+a.portrait:hover {
+  border-color: #7f8db9;
 }
 
 /* line 42, ../sass/partials/_structure.scss */
-nav {
-  display: block;
+#header-title {
+  -webkit-flex: none;
+  flex: none;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
 }
-/* line 44, ../sass/partials/_structure.scss */
-nav a {
-  display: inherit;
+/* line 45, ../sass/partials/_structure.scss */
+#header-title h1, #header-title #header-title:after {
   margin: 8px 0px 0px 0px;
   margin: 0.8rem 0rem 0rem 0rem;
 }
-/* line 48, ../sass/partials/_structure.scss */
-nav form {
-  margin: 21px 0px 0px 0px;
-  margin: 2.1rem 0rem 0rem 0rem;
+
+/* line 51, ../sass/partials/_structure.scss */
+nav a {
+  display: block;
+  margin: 8px 0px 0px 0px;
+  margin: 0.8rem 0rem 0rem 0rem;
 }
-/* line 50, ../sass/partials/_structure.scss */
+/* line 55, ../sass/partials/_structure.scss */
+nav form {
+  margin: 34px 0px 0px 0px;
+  margin: 3.4rem 0rem 0rem 0rem;
+}
+/* line 57, ../sass/partials/_structure.scss */
 nav form input {
   width: 140px;
 }
 
 /* Article */
-/* line 58, ../sass/partials/_structure.scss */
+/* line 65, ../sass/partials/_structure.scss */
 article {
   width: auto;
   margin: 0px 230px 0px 0px;
   margin: 0rem 23rem 0rem 0rem;
-  padding: 55px 34px 55px 34px;
-  padding: 5.5rem 3.4rem 5.5rem 3.4rem;
+  padding: 34px 55px 34px 55px;
+  padding: 3.4rem 5.5rem 3.4rem 5.5rem;
 }
 
 /* About section*/
 /* Footer */
 /* line 3, ../sass/partials/_typography.scss */
-h1, h1 a, .subtitle, h2, h2 a {
+#header-title h1, #header-title #header-title:after, #header-title h1 a, #header-title #header-title:after a, #header-title .subtitle, h2, h2 a {
   font-family: Calluna-Regular, Times New Roman, serif;
   font-weight: normal;
   font-style: normal;
-  text-rendering: optimizelegibility;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* line 11, ../sass/partials/_typography.scss */
 a, form, li, p, span, td, ul, h3, h4, h5 {
-  font-family: Lato, Helvetica Neun, Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
-  text-rendering: optimizelegibility;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -166,34 +185,58 @@ a, form, li, p, span, td, ul, h3, h4, h5 {
   font-size: 2.1rem;
 }
 
-/* line 27, ../sass/partials/_typography.scss */
-h1, h1 a {
+/* line 28, ../sass/partials/_typography.scss */
+#header-title h1, #header-title #header-title:after, #header-title h1 a, #header-title #header-title:after a {
   font-weight: bold;
-  color: #5769a0;
+  color: #4c4c4c;
   font-size: 21px;
   font-size: 2.1rem;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
-
-/* line 37, ../sass/partials/_typography.scss */
-.subtitle {
+/* line 34, ../sass/partials/_typography.scss */
+#header-title h1:hover, #header-title #header-title:hover:after, #header-title h1 a:hover, #header-title #header-title:after a:hover {
+  color: #7f8db9;
+}
+/* line 38, ../sass/partials/_typography.scss */
+#header-title .subtitle {
   text-transform: uppercase;
+  color: #c58c52;
   font-size: 13px;
   font-size: 1.3rem;
 }
-
 /* line 44, ../sass/partials/_typography.scss */
+#header-title:after {
+  display: block;
+  content: "〜";
+  margin: 13px 0px 13px 0px;
+  margin: 1.3rem 0rem 1.3rem 0rem;
+}
+
+/* line 53, ../sass/partials/_typography.scss */
 nav * {
   font-size: 13px;
   font-size: 1.3rem;
 }
-/* line 47, ../sass/partials/_typography.scss */
+/* line 56, ../sass/partials/_typography.scss */
 nav a {
   text-transform: uppercase;
+  color: #8c8a80;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 60, ../sass/partials/_typography.scss */
+nav a:hover {
+  color: #7f8db9;
 }
 
-/* line 52, ../sass/partials/_typography.scss */
+/* line 66, ../sass/partials/_typography.scss */
 h2, h2 a {
-  color: #c58c52;
-  font-size: 55px;
-  font-size: 5.5rem;
+  color: #4c4c4c;
+  font-size: 34px;
+  font-size: 3.4rem;
 }
