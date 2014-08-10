@@ -18,9 +18,9 @@ $color-brown-20: #f1e3d5;
 
 // Typography variables
 
-$font-size-title: 8.9rem;
-$font-size-heading: 3.4rem;
-$font-size-body: 1.3rem;
+//$font-size-title: @include font-size(1.3);
+//$font-size-heading: @include font-size(2.1);
+//$font-size-body: @include font-size(0.8);
 
 $font-color-title: $color-blue-80;
 $font-color-heading: $color-brown-80;

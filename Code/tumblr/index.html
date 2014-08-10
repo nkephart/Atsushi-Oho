@@ -59,43 +59,40 @@
 <body>
 <div id="top-ancher"></div>
 <header role="banner">
-  <h1><a href="#top-ancher">Atsushi OHO</a></h1>
+  <section id="title">
+    <h1><a href="">Atsushi OHO</a></h1>
+    <span class="subtitle">Linguist</span>
+  </section>
+<!--      <img src="{PortraitURL-128}" alt="Portrait" class="portrait" />-->
+  <img src="img/portrait_sq_128.png" alt="Portrait" class="portrait" />
   <nav role="navigation">
-    <ul>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#teaching">Teaching</a></li>
-      <li><a href="#cv">CV</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <a href="#about">About Me</a>
+    <a href="#research">Research</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#cv">CV</a>
+    <a href="#contact">Contact</a>
     <form action="/search" method="get" id="" class="search-form">
-      <input type="text" placeholder="Search contents..." id="" name="" value="{SearchQuery}" />
+      <input type="text" placeholder="Search..." id="" name="" value="{SearchQuery}" />
     </form>
   </nav>
 </header>
 <article role="main">
   <section id="about">
     <h2>About Me</h2>
-    <section id="about-text">
-      <h3>Personal Info</h3>
-      <ul>
-        <li>Atsushi OHO</li>
-        <li>5th year PhD student in the Linguistics Department at Rutgers University</li>
-      </ul>
-      <h3>Areas of Interests</h3>
-      <ul>
-        <li>Semantics, Pragmatics, Syntax and their interfaces</li>
-        <li>Psycholinguistics, Cognitive Science</li>
-      </ul>
-      <h3>Research Topics</h3>
-      <ul>
-        <li>Scope Interactions, Quantifiers, Questions, Evidentiality, Sentence Processing</li>
-      </ul>
-    </section>
-    <section id="about-image">
-<!--      <img src="{PortraitURL-128}" alt="Portrait" class="portrait" />-->
-      <img src="img/portrait_sq_128.png" alt="Portrait" class="portrait" />
-    </section>
+    <h3>Personal Info</h3>
+    <ul>
+      <li>Atsushi OHO</li>
+      <li>5th year PhD student in the Linguistics Department at Rutgers University</li>
+    </ul>
+    <h3>Areas of Interests</h3>
+    <ul>
+      <li>Semantics, Pragmatics, Syntax and their interfaces</li>
+       <li>Psycholinguistics, Cognitive Science</li>
+    </ul>
+    <h3>Research Topics</h3>
+    <ul>
+      <li>Scope Interactions, Quantifiers, Questions, Evidentiality, Sentence Processing</li>
+    </ul>
   </section>
 
   <section id="research">
@@ -223,13 +220,10 @@
   </section>
 </article>
 <footer role="contentinfo">
-  <div id="footer-container">
-    <ul class="footer-notes">
-      <li>Copyright&nbsp;&copy;&nbsp;{CopyrightYears}&nbsp;<a href="http://atsushioho-draft.tumblr.com">Atsushi&nbsp;OHO</a></li>
-      <li>|</li>
-      <li><a href="#top-ancher">Back to top</a></li>
-    </ul>
-  </div>
+  <ul>
+    <li>Copyright&nbsp;&copy;&nbsp;{CopyrightYears}&nbsp;<a href="http://atsushioho-draft.tumblr.com">Atsushi&nbsp;OHO</a></li>
+    <li><a href="#top-ancher">Back to top</a></li>
+  </ul>
 </footer>
 <!-- jQuery libs and scripts -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -244,7 +238,6 @@
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-53010814-1', 'auto');
   ga('send', 'pageview');
 </script>
