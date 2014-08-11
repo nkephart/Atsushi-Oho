@@ -1,44 +1,86 @@
 // Typography partial
 
 %text-serif {
-  font-family: Calluna-Regular, Times New Roman, serif; 
-  font-weight: normal; 
-  font-style: normal;  
+  font-family: Calluna, Times New Roman, serif; 
+  font-weight: 400; 
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  line-height: 1.615;
+  @include font-smoothing;
 }
 
 %text-sans-serif {
-  font-family: Lato, Helvetica Neun, Helvetica, Arial, sans-serif;
-  font-weight: normal;
+  font-family: lato, arial, sans-serif;
+  font-weight: 400;
   font-style: normal;
-}
-
-a, form, p, span, td, ul, h3, h4, h5 {
-  @extend %text-sans-serif;
-  font-size: $font-size-body;
+  text-rendering: optimizeLegibility;
   line-height: 1.615;
+  @include font-smoothing;
+}
+
+a, form, li, p, span, td, ul, h3, h4, h5 {
+  @extend %text-sans-serif;
   text-decoration: none;
-  color: $font-color-body;
+  color: $color-grey-80;
+  @include font-size(1.6);
 }
 
-h1 {
-  @extend %text-serif;
-  font-size: $font-size-title;
-  color: $font-color-title;
-  text-align: center;
-  a {
+#header-title {
+  h1, h1 a {
+    @extend %text-serif;
+    color: $color-grey-80;
+    @include font-size(2.1);
+    @include transition(all 0.1s ease-in-out);
+    &:hover {
+      color: $color-blue-60;
+    }
+  }
+  .subtitle {
+    @extend %text-serif;
+    font-style: italic;
+    color: $color-brown-80;
+    @include font-size(1.6);
+  }
+  &:after {
     @extend h1;
+    display: block;
+    content: "〜";
+    @include margin(1.3,0);
   }
 }
 
-h2 {
-  @extend %text-serif;
-  font-size: $font-size-heading;
-  color: $font-color-heading;
+nav {
+  @extend %text-sans-serif;
+  @include font-size(1.6);
   a {
-    @extend h2;
+    @extend nav;
+    color: $color-grey-60;
+    @include transition(all 0.1s ease-in-out);
+    &:hover {
+      color: $color-blue-60;
+    }
+  }
+  input {
+    @extend nav;
   }
 }
 
-.subtitle {
-  font-size: $font-size-heading;
+h2, h2 a {
+  @extend %text-sans-serif;
+  font-weight: 300;
+  color: $color-grey-80;
+  @include font-size(3.4);
+}
+
+footer {
+  p {
+    @extend %text-serif;
+    font-style: italic;
+    color: $color-grey-60;
+  }
+  a {
+    @extend %text-serif;
+    font-style: italic;
+    color: $color-grey-80;
+  }
 }
