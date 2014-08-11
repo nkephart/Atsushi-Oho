@@ -1,40 +1,79 @@
 // Typography partial
 
-%text-serif {
-  font-family: Calluna, Times New Roman, serif; 
+/* General settings */
+
+%text-base {
   font-weight: 400; 
   font-style: normal;
+  color: $color-grey-80;
   text-rendering: optimizeLegibility;
   line-height: 1.615;
-  @include font-smoothing;
+  @include font-smoothing;  
+}
+
+%text-serif {
+  @extend %text-base;
+  font-family: calluna, "times new roman", serif; 
 }
 
 %text-sans-serif {
+  @extend %text-base;
   font-family: lato, arial, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  text-rendering: optimizeLegibility;
-  line-height: 1.615;
-  @include font-smoothing;
 }
 
-a, form, li, p, span, td, ul, h3, h4, h5 {
+a, form, li, p, span, td, ul, h4, h5 {
   @extend %text-sans-serif;
+  font-weight: 300;
   text-decoration: none;
-  color: $color-grey-80;
   @include font-size(1.6);
 }
 
-#header-title {
-  h1, h1 a {
-    @extend %text-serif;
-    color: $color-grey-80;
-    @include font-size(2.1);
+h1 {
+  @extend %text-serif;
+  @include font-size(2.1);
+  a {
+    @extend h1;
     @include transition(all 0.1s ease-in-out);
     &:hover {
       color: $color-blue-60;
     }
   }
+}
+
+h2 {
+  @extend %text-sans-serif;
+  font-weight: 300;
+  @include font-size(3.4);
+  a {
+    @extend h2;
+    @include transition(all 0.1s ease-in-out);
+    &:hover {
+      color: $color-blue-60;
+    }
+  }
+}
+
+h3 {
+  @extend %text-sans-serif;
+  @include font-size(1.6);
+  a {
+    @extend h3;
+    @include transition(all 0.1s ease-in-out);
+    &:hover {
+      color: $color-blue-60;
+    }
+  }
+}
+
+input, textarea, button {
+  @extend %text-sans-serif;
+  color: $color-grey-60;
+  @include font-size(1.3);
+}
+
+/* Structure contents */
+
+#header-title {
   .subtitle {
     @extend %text-serif;
     font-style: italic;
@@ -42,10 +81,8 @@ a, form, li, p, span, td, ul, h3, h4, h5 {
     @include font-size(1.6);
   }
   &:after {
-    @extend h1;
-    display: block;
-    content: "〜";
-    @include margin(1.3,0);
+    @extend %text-serif;
+    @include font-size(1.3);
   }
 }
 
@@ -60,16 +97,6 @@ nav {
       color: $color-blue-60;
     }
   }
-  input {
-    @extend nav;
-  }
-}
-
-h2, h2 a {
-  @extend %text-sans-serif;
-  font-weight: 300;
-  color: $color-grey-80;
-  @include font-size(3.4);
 }
 
 footer {
@@ -81,6 +108,5 @@ footer {
   a {
     @extend %text-serif;
     font-style: italic;
-    color: $color-grey-80;
   }
 }

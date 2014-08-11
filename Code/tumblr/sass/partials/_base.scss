@@ -19,12 +19,38 @@ body {
   width: auto;
 }
 
-li {
+article {
+  width: auto;
+  position: relative;
+  @include margin(0,23,0,0);
+  @include padding(3.4,5.5,2.1);
+}
+
+section {
+  position: relative;
+}
+
+ul {
   list-style: none;
 }
 
-input, textarea {
+textarea {
+  resize: none;  
+}
+
+input, textarea, button {
+  line-height: 1.615;
+  border: solid 1px #ddd;
+  @include margin(0,0,2.1);
+  @include padding(0.2,0.5);
+  @include box-sizing(border-box);
+  @include border-radius(5px);
   @include placeholder {
     font-style: italic;
+  }
+  @include transition(all 0.1s ease-in-out);
+  &:focus {
+    outline: none;
+    border: solid 1px $color-blue-40;
   }
 }

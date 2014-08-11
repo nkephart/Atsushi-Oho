@@ -19,36 +19,73 @@ body {
 }
 
 /* line 22, ../sass/partials/_base.scss */
-li {
+article {
+  width: auto;
+  position: relative;
+  margin: 0px 230px 0px 0px;
+  margin: 0rem 23rem 0rem 0rem;
+  padding: 34px 55px 21px 55px;
+  padding: 3.4rem 5.5rem 2.1rem 5.5rem;
+}
+
+/* line 29, ../sass/partials/_base.scss */
+section {
+  position: relative;
+}
+
+/* line 33, ../sass/partials/_base.scss */
+ul {
   list-style: none;
 }
 
+/* line 37, ../sass/partials/_base.scss */
+textarea {
+  resize: none;
+}
+
+/* line 41, ../sass/partials/_base.scss */
+input, textarea, button {
+  line-height: 1.615;
+  border: solid 1px #ddd;
+  margin: 0px 0px 21px 0px;
+  margin: 0rem 0rem 2.1rem 0rem;
+  padding: 2px 5px 2px 5px;
+  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
 /* line 4, ../sass/modules/_placeholder.scss */
-input.placeholder, textarea.placeholder {
+input.placeholder, textarea.placeholder, button.placeholder {
   font-style: italic;
 }
 /* line 5, ../sass/modules/_placeholder.scss */
-input:-moz-placeholder, textarea:-moz-placeholder {
+input:-moz-placeholder, textarea:-moz-placeholder, button:-moz-placeholder {
   font-style: italic;
 }
 /* line 6, ../sass/modules/_placeholder.scss */
-input::-moz-placeholder, textarea::-moz-placeholder {
+input::-moz-placeholder, textarea::-moz-placeholder, button::-moz-placeholder {
   font-style: italic;
 }
 /* line 7, ../sass/modules/_placeholder.scss */
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+input:-ms-input-placeholder, textarea:-ms-input-placeholder, button:-ms-input-placeholder {
   font-style: italic;
 }
 /* line 8, ../sass/modules/_placeholder.scss */
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, button::-webkit-input-placeholder {
   font-style: italic;
 }
-
-/* line 3, ../sass/partials/_contact-form.scss */
-.submit-message {
-  display: none;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
+/* line 52, ../sass/partials/_base.scss */
+input:focus, textarea:focus, button:focus {
+  outline: none;
+  border: solid 1px #aeb6d2;
 }
 
 /* Header */
@@ -106,10 +143,10 @@ a.portrait {
   order: -1;
   -webkit-flex: none;
   flex: none;
-  -moz-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
-  -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
 }
 /* line 38, ../sass/partials/_structure.scss */
 a.portrait:hover {
@@ -124,41 +161,64 @@ a.portrait:hover {
   justify-content: flex-end;
 }
 /* line 46, ../sass/partials/_structure.scss */
-#header-title h1, #header-title #header-title:after {
+#header-title h1, #header-title h1 a, h1 #header-title a {
   margin: 8px 0px 0px 0px;
   margin: 0.8rem 0rem 0rem 0rem;
 }
+/* line 49, ../sass/partials/_structure.scss */
+#header-title:after {
+  display: block;
+  content: "〜";
+  margin: 13px 0px 0px 0px;
+  margin: 1.3rem 0rem 0rem 0rem;
+}
 
-/* line 52, ../sass/partials/_structure.scss */
+/* line 57, ../sass/partials/_structure.scss */
 nav a {
   display: block;
   margin: 8px 0px 0px 0px;
   margin: 0.8rem 0rem 0rem 0rem;
 }
-/* line 56, ../sass/partials/_structure.scss */
+/* line 61, ../sass/partials/_structure.scss */
 nav form {
   margin: 34px 0px 0px 0px;
   margin: 3.4rem 0rem 0rem 0rem;
 }
-/* line 58, ../sass/partials/_structure.scss */
+/* line 63, ../sass/partials/_structure.scss */
 nav form input {
   width: 140px;
 }
 
-/* Article */
-/* line 66, ../sass/partials/_structure.scss */
-article {
-  width: auto;
-  position: relative;
-  margin: 0px 230px 0px 0px;
-  margin: 0rem 23rem 0rem 0rem;
-  padding: 34px 55px 34px 55px;
-  padding: 3.4rem 5.5rem 3.4rem 5.5rem;
+/* Article sections */
+/* line 71, ../sass/partials/_structure.scss */
+section.contents-section {
+  margin: 0px 0px 55px 0px;
+  margin: 0rem 0rem 5.5rem 0rem;
 }
 
 /* About section*/
-/* Footer */
-/* line 80, ../sass/partials/_structure.scss */
+/* Contact section */
+/* line 79, ../sass/partials/_structure.scss */
+#contact {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 83, ../sass/partials/_structure.scss */
+#contact-form-wrapper, #alt-contact-wrapper {
+  float: left;
+  width: 45%;
+  padding: 13px 0px 13px 0px;
+  padding: 1.3rem 0rem 1.3rem 0rem;
+}
+
+/* line 89, ../sass/partials/_structure.scss */
+#alt-contact-wrapper {
+  margin-left: 10%;
+}
+
+/* Article footer */
+/* line 96, ../sass/partials/_structure.scss */
 footer {
   margin: 34px auto;
   text-align: center;
@@ -166,8 +226,19 @@ footer {
 }
 
 /* Widgets */
-/* line 88, ../sass/partials/_structure.scss */
-.link-button {
+/* line 104, ../sass/partials/_structure.scss */
+.no-padding {
+  padding: 0px 0px 0px 0px;
+  padding: 0rem 0rem 0rem 0rem;
+}
+
+/* line 108, ../sass/partials/_structure.scss */
+ul.circle-list {
+  list-style: circle;
+}
+
+/* line 112, ../sass/partials/_structure.scss */
+a.link-button {
   color: #5769a0;
   border-bottom: dashed 1px #5769a0;
   padding-bottom: 3px;
@@ -176,77 +247,121 @@ footer {
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
-/* line 93, ../sass/partials/_structure.scss */
-.link-button:hover {
+/* line 117, ../sass/partials/_structure.scss */
+a.link-button:hover {
   color: #7f8db9;
   border-color: #7f8db9;
 }
 
-/* line 3, ../sass/partials/_typography.scss */
-#header-title h1, #header-title #header-title:after, #header-title h1 a, #header-title #header-title:after a, #header-title .subtitle, footer p, footer a {
-  font-family: Calluna, Times New Roman, serif;
+/* General settings */
+/* line 5, ../sass/partials/_typography.scss */
+h1, h1 a, #header-title .subtitle, #header-title:after, footer p, footer a, a, form, li, p, span, td, ul, h4, h5, h2, h2 a, h3, h3 a, input, textarea, button, nav, nav a, .submit-message {
   font-weight: 400;
   font-style: normal;
-  text-rendering: optimizeLegibility;
-  line-height: 1.615;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* line 12, ../sass/partials/_typography.scss */
-a, form, li, p, span, td, ul, h3, h4, h5, nav, nav a, nav input, h2, h2 a {
-  font-family: lato, arial, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  text-rendering: optimizeLegibility;
-  line-height: 1.615;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* line 21, ../sass/partials/_typography.scss */
-a, form, li, p, span, td, ul, h3, h4, h5 {
-  text-decoration: none;
   color: #4c4c4c;
+  text-rendering: optimizeLegibility;
+  line-height: 1.615;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 14, ../sass/partials/_typography.scss */
+h1, h1 a, #header-title .subtitle, #header-title:after, footer p, footer a {
+  font-family: calluna, "times new roman", serif;
+}
+
+/* line 19, ../sass/partials/_typography.scss */
+a, form, li, p, span, td, ul, h4, h5, h2, h2 a, h3, h3 a, input, textarea, button, nav, nav a, .submit-message {
+  font-family: lato, arial, sans-serif;
+}
+
+/* line 24, ../sass/partials/_typography.scss */
+a, form, li, p, span, td, ul, h4, h5 {
+  font-weight: 300;
+  text-decoration: none;
   font-size: 16px;
   font-size: 1.6rem;
 }
 
-/* line 29, ../sass/partials/_typography.scss */
-#header-title h1, #header-title #header-title:after, #header-title h1 a, #header-title #header-title:after a {
-  color: #4c4c4c;
+/* line 31, ../sass/partials/_typography.scss */
+h1, h1 a {
   font-size: 21px;
   font-size: 2.1rem;
+}
+/* line 34, ../sass/partials/_typography.scss */
+h1 a {
   -moz-transition: all 0.1s ease-in-out;
   -o-transition: all 0.1s ease-in-out;
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
-/* line 34, ../sass/partials/_typography.scss */
-#header-title h1:hover, #header-title #header-title:hover:after, #header-title h1 a:hover, #header-title #header-title:after a:hover {
+/* line 37, ../sass/partials/_typography.scss */
+h1 a:hover {
   color: #7f8db9;
 }
-/* line 38, ../sass/partials/_typography.scss */
+
+/* line 43, ../sass/partials/_typography.scss */
+h2, h2 a {
+  font-weight: 300;
+  font-size: 34px;
+  font-size: 3.4rem;
+}
+/* line 47, ../sass/partials/_typography.scss */
+h2 a {
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+/* line 50, ../sass/partials/_typography.scss */
+h2 a:hover {
+  color: #7f8db9;
+}
+
+/* line 56, ../sass/partials/_typography.scss */
+h3, h3 a {
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+/* line 59, ../sass/partials/_typography.scss */
+h3 a {
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+/* line 62, ../sass/partials/_typography.scss */
+h3 a:hover {
+  color: #7f8db9;
+}
+
+/* line 68, ../sass/partials/_typography.scss */
+input, textarea, button {
+  color: #8c8a80;
+  font-size: 13px;
+  font-size: 1.3rem;
+}
+
+/* Structure contents */
+/* line 77, ../sass/partials/_typography.scss */
 #header-title .subtitle {
   font-style: italic;
   color: #c58c52;
   font-size: 16px;
   font-size: 1.6rem;
 }
-/* line 44, ../sass/partials/_typography.scss */
+/* line 83, ../sass/partials/_typography.scss */
 #header-title:after {
-  display: block;
-  content: "〜";
-  margin: 13px 0px 13px 0px;
-  margin: 1.3rem 0rem 1.3rem 0rem;
+  font-size: 13px;
+  font-size: 1.3rem;
 }
 
-/* line 52, ../sass/partials/_typography.scss */
-nav, nav a, nav input {
+/* line 89, ../sass/partials/_typography.scss */
+nav, nav a {
   font-size: 16px;
   font-size: 1.6rem;
 }
-/* line 55, ../sass/partials/_typography.scss */
+/* line 92, ../sass/partials/_typography.scss */
 nav a {
   color: #8c8a80;
   -moz-transition: all 0.1s ease-in-out;
@@ -254,26 +369,90 @@ nav a {
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
-/* line 59, ../sass/partials/_typography.scss */
+/* line 96, ../sass/partials/_typography.scss */
 nav a:hover {
   color: #7f8db9;
 }
 
-/* line 68, ../sass/partials/_typography.scss */
-h2, h2 a {
-  font-weight: 300;
-  color: #4c4c4c;
-  font-size: 34px;
-  font-size: 3.4rem;
-}
-
-/* line 76, ../sass/partials/_typography.scss */
+/* line 103, ../sass/partials/_typography.scss */
 footer p {
   font-style: italic;
   color: #8c8a80;
 }
-/* line 81, ../sass/partials/_typography.scss */
+/* line 108, ../sass/partials/_typography.scss */
 footer a {
   font-style: italic;
-  color: #4c4c4c;
+}
+
+/* line 3, ../sass/partials/_contact-form.scss */
+.form-wrapper {
+  margin: 0;
+  border: solid 1px #eee;
+  background: rgba(0, 0, 0, 0.02);
+  padding: 21px 21px 21px 21px;
+  padding: 2.1rem 2.1rem 2.1rem 2.1rem;
+}
+
+/* line 10, ../sass/partials/_contact-form.scss */
+input, textarea {
+  width: 100%;
+}
+
+/* line 14, ../sass/partials/_contact-form.scss */
+#ss-submit {
+  position: relative;
+  border: solid 1px #aeb6d2;
+  background: #aeb6d2;
+  color: white;
+  margin: 0px 0px 0px 0px;
+  margin: 0rem 0rem 0rem 0rem;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+}
+
+/* line 25, ../sass/partials/_contact-form.scss */
+#ss-submit.sent {
+  -moz-border-radius-topright: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* line 31, ../sass/partials/_contact-form.scss */
+#ss-submit-arrow:after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: 13px;
+  border: solid 13px transparent;
+  border-left: solid 13px #aeb6d2;
+  z-index: -1;
+}
+
+/* line 43, ../sass/partials/_contact-form.scss */
+#ss-submit-arrow.sent:after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -27px;
+  border: solid 13px transparent;
+  border-left: solid 13px #aeb6d2;
+  z-index: 0;
+}
+
+/* line 54, ../sass/partials/_contact-form.scss */
+.submit-message {
+  display: none;
+  font-style: italic;
+  color: #7f8db9;
+  opacity: 0;
+  font-size: 13px;
+  font-size: 1.3rem;
+  margin: 0px 0px 0px 21px;
+  margin: 0rem 0rem 0rem 2.1rem;
 }

@@ -12,7 +12,7 @@
 <!-- Main contetns -->
 <body>
 <body dir="ltr">
-<article itemscope itemtype="http://schema.org/CreativeWork/FormObject">
+<article itemscope itemtype="http://schema.org/CreativeWork/FormObject" class="form-wrapper">
   <section class="form-container">
     <form action="https://docs.google.com/forms/d/1dEOSAopcxvSCyg9V_3R-V6Mk9VHAEPZmXUaUg6RnEzY/formResponse" method="post" name="ss-form" target="submit_iframe" onsubmit="return checkForm()">
       <iframe hidden name="submit_iframe" id="submit_iframe"></iframe>
@@ -23,20 +23,20 @@
         <input type="email" size="30" name="entry.441788654" placeholder="Your E-mail Address" id="entry_441788654" dir="auto" aria-label="E-Mail Address" aria-required="true" required>
       </section>
       <section>
-        <textarea name="entry.723528064" rows="8" cols="50" placeholder="Your message" id="entry_723528064" dir="auto" aria-label="Text"></textarea>
+        <textarea name="entry.723528064" rows="8" cols="50" placeholder="Your Message" id="entry_723528064" dir="auto" aria-label="Message"></textarea>
       </section>
       <section>
         <input type="hidden" name="draftResponse" value="[,,&quot;5969303432463856438&quot;]">
         <input type="hidden" name="pageHistory" value="0">
         <input type="hidden" name="fbzx" value="5969303432463856438">
-        <button type="submit" name="submit" id="ss-submit">Submit</button>
+        <button type="submit" name="submit" id="ss-submit">Submit<div id="ss-submit-arrow"></div></button>
+        <span class="submit-message">Message sent!</span>
       </section>
     </form>
   </section>
-  <span class="submit-message">Your message has been sent!</span>
 </article>
 <!-- jQuery libs and scripts -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
 <script type="text/javascript">
 function checkForm(){
@@ -51,8 +51,9 @@ function checkForm(){
   }
   else{
     status=true;
-    $('section.form-container').animate({height:0,opacity:0},300,'linear');
-    $('span.submit-message').css({display:'inherit'}).animate({opacity:100},500,'linear');
+    $('#ss-submit').addClass('sent').attr('disabled',true);
+    $('#ss-submit-arrow').addClass('sent');
+    $('.submit-message').css({display:'initial'}).animate({opacity:'1'},300,'linear');
   }
   return status;
 }
