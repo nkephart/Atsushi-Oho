@@ -19,31 +19,16 @@ body {
 }
 
 /* line 22, ../sass/partials/_base.scss */
-article {
-  width: auto;
-  position: relative;
-  margin: 0px 230px 0px 0px;
-  margin: 0rem 23rem 0rem 0rem;
-  padding: 34px 55px 21px 55px;
-  padding: 3.4rem 5.5rem 2.1rem 5.5rem;
-}
-
-/* line 29, ../sass/partials/_base.scss */
-section {
-  position: relative;
-}
-
-/* line 33, ../sass/partials/_base.scss */
 ul {
   list-style: none;
 }
 
-/* line 37, ../sass/partials/_base.scss */
+/* line 26, ../sass/partials/_base.scss */
 textarea {
   resize: none;
 }
 
-/* line 41, ../sass/partials/_base.scss */
+/* line 30, ../sass/partials/_base.scss */
 input, textarea, button {
   line-height: 1.615;
   border: solid 1px #ddd;
@@ -82,7 +67,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder, button:-ms-input-pl
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, button::-webkit-input-placeholder {
   font-style: italic;
 }
-/* line 52, ../sass/partials/_base.scss */
+/* line 41, ../sass/partials/_base.scss */
 input:focus, textarea:focus, button:focus {
   outline: none;
   border: solid 1px #aeb6d2;
@@ -189,8 +174,23 @@ nav form input {
   width: 140px;
 }
 
-/* Article sections */
+/* Article */
 /* line 71, ../sass/partials/_structure.scss */
+article {
+  width: auto;
+  position: relative;
+  margin: 0px 230px 0px 0px;
+  margin: 0rem 23rem 0rem 0rem;
+  padding: 34px 55px 21px 55px;
+  padding: 3.4rem 5.5rem 2.1rem 5.5rem;
+}
+
+/* line 78, ../sass/partials/_structure.scss */
+section {
+  position: relative;
+}
+
+/* line 82, ../sass/partials/_structure.scss */
 section.contents-section {
   margin: 0px 0px 55px 0px;
   margin: 0rem 0rem 5.5rem 0rem;
@@ -198,13 +198,13 @@ section.contents-section {
 
 /* About section*/
 /* Contact section */
-/* line 79, ../sass/partials/_structure.scss */
+/* line 90, ../sass/partials/_structure.scss */
 #contact {
   overflow: hidden;
   *zoom: 1;
 }
 
-/* line 83, ../sass/partials/_structure.scss */
+/* line 94, ../sass/partials/_structure.scss */
 #contact-form-wrapper, #alt-contact-wrapper {
   float: left;
   width: 45%;
@@ -212,32 +212,30 @@ section.contents-section {
   padding: 1.3rem 0rem 1.3rem 0rem;
 }
 
-/* line 89, ../sass/partials/_structure.scss */
+/* line 100, ../sass/partials/_structure.scss */
 #alt-contact-wrapper {
   margin-left: 10%;
 }
 
 /* Article footer */
-/* line 96, ../sass/partials/_structure.scss */
+/* line 107, ../sass/partials/_structure.scss */
 footer {
-  margin: 34px auto;
   text-align: center;
-  border-top: solid 1px #eee;
 }
 
 /* Widgets */
-/* line 104, ../sass/partials/_structure.scss */
+/* line 113, ../sass/partials/_structure.scss */
 .no-padding {
   padding: 0px 0px 0px 0px;
   padding: 0rem 0rem 0rem 0rem;
 }
 
-/* line 108, ../sass/partials/_structure.scss */
+/* line 117, ../sass/partials/_structure.scss */
 ul.circle-list {
   list-style: circle;
 }
 
-/* line 112, ../sass/partials/_structure.scss */
+/* line 121, ../sass/partials/_structure.scss */
 a.link-button {
   color: #5769a0;
   border-bottom: dashed 1px #5769a0;
@@ -247,7 +245,7 @@ a.link-button {
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
-/* line 117, ../sass/partials/_structure.scss */
+/* line 126, ../sass/partials/_structure.scss */
 a.link-button:hover {
   color: #7f8db9;
   border-color: #7f8db9;
@@ -255,7 +253,7 @@ a.link-button:hover {
 
 /* General settings */
 /* line 5, ../sass/partials/_typography.scss */
-h1, h1 a, #header-title .subtitle, #header-title:after, footer p, footer a, a, form, li, p, span, td, ul, h4, h5, h2, h2 a, h3, h3 a, input, textarea, button, nav, nav a, .submit-message {
+h1, h1 a, #header-title .subtitle, #header-title:after, footer p, footer a, a, form, li, p, span, td, ul, h4, h5, h2, h2 a, h3, h3 a, input, textarea, button, nav, nav a, .notification {
   font-weight: 400;
   font-style: normal;
   color: #4c4c4c;
@@ -271,7 +269,7 @@ h1, h1 a, #header-title .subtitle, #header-title:after, footer p, footer a {
 }
 
 /* line 19, ../sass/partials/_typography.scss */
-a, form, li, p, span, td, ul, h4, h5, h2, h2 a, h3, h3 a, input, textarea, button, nav, nav a, .submit-message {
+a, form, li, p, span, td, ul, h4, h5, h2, h2 a, h3, h3 a, input, textarea, button, nav, nav a, .notification {
   font-family: lato, arial, sans-serif;
 }
 
@@ -376,10 +374,16 @@ nav a:hover {
 
 /* line 103, ../sass/partials/_typography.scss */
 footer p {
+  margin: 0;
   font-style: italic;
   color: #8c8a80;
 }
 /* line 108, ../sass/partials/_typography.scss */
+footer p:last-child {
+  font-size: 13px;
+  font-size: 1.3rem;
+}
+/* line 112, ../sass/partials/_typography.scss */
 footer a {
   font-style: italic;
 }
@@ -446,13 +450,25 @@ input, textarea {
 }
 
 /* line 54, ../sass/partials/_contact-form.scss */
-.submit-message {
+.notification {
+  positon: absolute;
+  top: 0;
+  left: 0;
   display: none;
   font-style: italic;
-  color: #7f8db9;
   opacity: 0;
   font-size: 13px;
   font-size: 1.3rem;
   margin: 0px 0px 0px 21px;
   margin: 0rem 0rem 0rem 2.1rem;
+}
+
+/* line 66, ../sass/partials/_contact-form.scss */
+.sent-message {
+  color: #7f8db9;
+}
+
+/* line 70, ../sass/partials/_contact-form.scss */
+.field-warning, .email-warning {
+  color: #c29973;
 }

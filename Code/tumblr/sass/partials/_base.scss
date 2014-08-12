@@ -19,17 +19,6 @@ body {
   width: auto;
 }
 
-article {
-  width: auto;
-  position: relative;
-  @include margin(0,23,0,0);
-  @include padding(3.4,5.5,2.1);
-}
-
-section {
-  position: relative;
-}
-
 ul {
   list-style: none;
 }

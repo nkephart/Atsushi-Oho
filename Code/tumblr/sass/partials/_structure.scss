@@ -66,7 +66,18 @@ nav {
   }
 }
 
-/* Article sections */
+/* Article */
+
+article {
+  width: auto;
+  position: relative;
+  @include margin(0,23,0,0);
+  @include padding(3.4,5.5,2.1);
+}
+
+section {
+  position: relative;
+}
 
 section.contents-section {
   @include margin(0,0,5.5);
@@ -94,9 +105,7 @@ section.contents-section {
 /* Article footer */
 
 footer {
-  margin: 34px auto;
   text-align: center;
-  border-top: solid 1px #eee;
 }
 
 /* Widgets */

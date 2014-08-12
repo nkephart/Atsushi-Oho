@@ -51,12 +51,22 @@ input, textarea {
   }
 }
 
-.submit-message {
+.notification {
   @extend %text-sans-serif;
+  positon: absolute;
+  top: 0;
+  left: 0;
   display: none;
   font-style: italic;
-  color: $color-blue-60;
   opacity: 0;
   @include font-size(1.3);
   @include margin(0,0,0,2.1);
+}
+
+.sent-message {
+  color: $color-blue-60;
+}
+
+.field-warning, .email-warning {
+  color: $color-brown-60;
 }

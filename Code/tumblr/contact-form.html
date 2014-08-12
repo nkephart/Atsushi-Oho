@@ -30,7 +30,9 @@
         <input type="hidden" name="pageHistory" value="0">
         <input type="hidden" name="fbzx" value="5969303432463856438">
         <button type="submit" name="submit" id="ss-submit">Submit<div id="ss-submit-arrow"></div></button>
-        <span class="submit-message">Message sent!</span>
+        <span class="notification field-warning">Please fill all fields.</span>
+        <span class="notification email-warning">Invalid e-mail address format.</span>
+        <span class="notification sent-message">Message sent!</span>
       </section>
     </form>
   </section>
@@ -44,16 +46,21 @@ function checkForm(){
   var emailRegEx=/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
   
   if(document.forms['ss-form']['entry.1902549149'].value==""||document.forms['ss-form']['entry.441788654'].value==""){
-    alert("Please input the required fields");
+//    alert("Please input the required fields");
+    $('.notification').css({display:'none'});
+    $('.field-warning').css({display:'initial'}).animate({opacity:'1'},150,'linear');
   }
   else if(document.forms['ss-form']['entry.441788654'].value.search(emailRegEx)==-1){
-    alert("Invalid E-mail address format");
+//    alert("Invalid E-mail address format");
+    $('.notification').css({display:'none'});
+    $('.email-warning').css({display:'initial'}).animate({opacity:'1'},150,'linear');
   }
   else{
     status=true;
+    $('.notification').css({display:'none'});
     $('#ss-submit').addClass('sent').attr('disabled',true);
     $('#ss-submit-arrow').addClass('sent');
-    $('.submit-message').css({display:'initial'}).animate({opacity:'1'},300,'linear');
+    $('.sent-message').css({display:'initial'}).animate({opacity:'1'},150,'linear');
   }
   return status;
 }
