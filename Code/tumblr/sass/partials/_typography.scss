@@ -102,7 +102,6 @@ nav {
 footer {
   p {
     @extend %text-serif;
-    margin: 0;
     font-style: italic;
     color: $color-grey-60;
     &:last-child {
@@ -112,5 +111,14 @@ footer {
   a {
     @extend %text-serif;
     font-style: italic;
+  }
+}
+
+a.post-more {
+  font-style: italic;
+  @include font-size(1.3);
+  @include transition(all 0.1s ease-in-out);
+  &:hover {
+    color: $color-blue-60;
   }
 }

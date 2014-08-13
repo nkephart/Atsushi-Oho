@@ -106,25 +106,7 @@ section.contents-section {
 
 footer {
   text-align: center;
-}
-
-/* Widgets */
-
-.no-padding {
-  @include padding(0);
-}
-
-ul.circle-list {
-  list-style: circle;
-}
-
-a.link-button {
-  color: $color-blue-80;
-  border-bottom: dashed 1px $color-blue-80;
-  padding-bottom: 3px;
-  @include transition(all 0.1s ease-in-out);
-  &:hover {
-    color: $color-blue-60;
-    border-color: $color-blue-60;
+  p {
+    margin: 0;
   }
 }

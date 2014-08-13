@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
 <meta name="robots" content="all">
 <meta name="keywords" content="">
-<meta name="description" content="{Description}">
+<meta name="description" content="{MetaDescription}">
 <meta name="author" content="Atsushi OHO">
 <!-- Social settings -->
 <meta property="og:title" content="{PostTitle}">
@@ -18,9 +18,9 @@
 <meta property="og:image" content="{PortraitURL-128}">
 <meta property="og:url" content="#">
 <meta property="og:site_name" content="{Title}">
-<meta property="og:description" content="{Description}">
+<meta property="og:description" content="{MetaDescription}">
 <!-- General settings -->
-<title>{block:SearchPage}Search results for: {SearchQuery}{/block:SearchPage}{block:PostTitle}{PostTitle} - {/block:PostTitle}{Title}</title>
+<title>{block:SearchPage}Search results for: {SearchQuery} | {/block:SearchPage}{block:PostTitle}{PostTitle} | {/block:PostTitle}{Title}</title>
 <link rel="shortcut icon" href="{Favicon}">
 <link rel="apple-touch-icon" href="{PortraitURL-128}">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}">
@@ -28,8 +28,8 @@
 <script type="text/javascript" src="//use.typekit.net/dkj2omi.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 <!-- CSS files -->
-<link rel="stylesheet" type="text/css" href="css/vendor/normalize.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="https://dl.dropboxusercontent.com/u/2997478/ao-samples/css/vendor/normalize.css">
+<link rel="stylesheet" type="text/css" href="https://dl.dropboxusercontent.com/u/2997478/ao-samples/css/style.css">
 <!--[if lt IE 9]>
   <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -38,24 +38,27 @@
 <div id="header-container">
   <header role="banner">
     <section id="header-title">
-      <h1><a href="/" title="Atsushi OHO">Atsushi OHO</a></h1>
+      <h1><a href="{BlogURL}" title="Atsushi OHO">Atsushi OHO</a></h1>
       <span class="subtitle">Linguist</span>
     </section>
     <a href="#" class="portrait top-scroll" title="Home"></a>
     <nav role="navigation">
-      <a href="#about" class="ancher-scroll" title="About Me">About Me</a>
-      <a href="#research" class="ancher-scroll" title="Research">Research</a>
-      <a href="#teaching" class="ancher-scroll" title="Teaching">Teaching</a>
-      <a href="#contact" class="ancher-scroll" title="Contact">Contact</a>
+      <a href="/#about" class="ancher-scroll" title="About Me">About Me</a>
+      <a href="/#research" class="ancher-scroll" title="Research">Research</a>
+      <a href="/#teaching" class="ancher-scroll" title="Teaching">Teaching</a>
+      <a href="/#contact" class="ancher-scroll" title="Contact">Contact</a>
       <a href="" title="CV">CV</a>
-      <form action="/search" method="get" id="" class="search-form">
-        <input type="text" placeholder="Search..." id="" name="" value="{SearchQuery}" />
+      <form action="/search" method="get" class="search-form">
+        <input type="text" placeholder="Search..." name="q" value="{SearchQuery}" />
       </form>
     </nav>
   </header>
 </div>
 <article role="main">
+
+  {block:IndexPage}
   <section id="about" class="contents-section">
+    <a name="about"></a>
     <h2>About Me</h2>
     <h3>Personal Info</h3>
     <ul class="circle-list">
@@ -75,12 +78,14 @@
   </section>
 
   <section id="research" class="contents-section">
+    <a name="research"></a>
     <h2>Research</h2>
     <h3>Papers</h3>
     <h4>Conference Proceedings - 2013</h4>
     <ul>
       <li>“Scrambling and Dependent Interpretations in Multiple Wh-questions in Japanese” In Proceedings of Formal Approaches to Japanese Linguistics 6 (FAJL 6), pp133-144, MITWPL.&nbsp;&nbsp;&nbsp;<a href="" target="_blank" class="link-button" title="PDF">{pdf}</a></li>
     </ul>
+    <span><a href="/tagged/papers" class="post-more" title="See more">More&nbsp;&gt;&gt;</a></span>
     <h3>Presentations</h3>
     <h4>Conference Presentations - 2014</h4>
     <ul>
@@ -98,16 +103,20 @@
     <ul>
       <li>"Scrambling and dependency in multiple wh-questions", RuLing VIII, April.&nbsp;&nbsp;&nbsp;<a href="" target="_blank" class="link-button" title="Slides">{slides}</a></li>
     </ul>
+    <span><a href="/tagged/presentations" class="post-more" title="See more">More&nbsp;&gt;&gt;</a></span>
   </section>
 
   <section id="teaching" class="contents-section">
+    <a name="teaching"></a>
     <h2>Teaching</h2>
+    <span><a href="/tagged/teaching" class="post-more" title="See more">More&nbsp;&gt;&gt;</a></span>
   </section>
   
   <section id="contact" class="contents-section">
+    <a name="contact"></a>
     <h2>Contact</h2>
     <section id="contact-form-wrapper">
-      <iframe class="contact-form" width="100%" height="300" frameborder="0" marginheight="0" marginwidth="0" src="contact-form.html">Loading&hellip;</iframe>
+      <iframe class="contact-form" width="100%" height="300" frameborder="0" marginheight="0" marginwidth="0" src="https://dl.dropboxusercontent.com/u/2997478/ao-samples/contact-form%20_tbpublic.html">Loading&hellip;</iframe>
     </section>
     <section id="alt-contact-wrapper">
       <h3>E-Mail</h3>
@@ -122,14 +131,35 @@
       </ul>
     </section>
   </section>
+  {/block:IndexPage}
+
+  {block:TagPage}
+  <section id="tag-page" class="{TagsAsClasses} contents-section">
+    <h2>{Tag}</h2>
+    {block:Posts}{block:Text}
+    {block:Title}<h4>{Title}</h4>{/block:Title}
+    <ul>
+      <li>{Body}</li>
+    </ul>
+    {/block:Text}{/block:Posts}
+  </section>
+  {/block:TagPage}
+
+  {block:SearchPage}
+  <section id="search-page">
+    <h2>Search results for: {SearchQuery}</h2>
+    <h4>{SearchResultCount} matched</h4>>
+  </section>
+  {/block:SearchPage}
+  
   <footer role="contentinfo">
-    <p>Copyright&nbsp;&copy;&nbsp;{CopyrightYears}&nbsp;<a href="/" title="Atsushi OHO">Atsushi&nbsp;OHO</a></p>
+    <p>Copyright&nbsp;&copy;&nbsp;{CopyrightYears}&nbsp;<a href="{BlogURL}" title="Atsushi OHO">Atsushi&nbsp;OHO</a></p>
     <p>Unauthorized copying and replication of the contents of this site, text, images and material are strictly prohibited.</p>
   </footer>
 </article>
 <!-- jQuery libs and scripts -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/iframe-resizer/js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="https://dl.dropboxusercontent.com/u/2997478/ao-samples/js/iframe-resizer/js/iframeResizer.min.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
     $('.contact-form').iFrameResize([{}]);
@@ -150,10 +180,12 @@
 <script type="text/javascript"> // Smooth scrolling effect
   $(function() {
     $('.ancher-scroll').click(function(){
-      var i = $(this).attr('href');
-      var j = $(i).offset().top;
-      $('html,body').animate({scrollTop:j},'fast');
-      return false;
+      if((window.location.href == {JSBlogURL}) || window.location.hash){
+        var i = $(this).attr('href').substr(1);
+        var j = $(i).offset().top;
+        $('html,body').animate({scrollTop:j},'fast');
+        return false;
+      }
 	});
 	$('.top-scroll').click(function(){
       $('html,body').animate({scrollTop:0},'fast');
