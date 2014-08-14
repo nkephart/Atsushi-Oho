@@ -4,7 +4,7 @@
 
   Designed and coded by Kaamos Craft
   http://kaamoscraft.tumblr.com
-  Last updated 2014.08.11 / Ver 0.5
+  Last updated 2014.08.15 / Ver 0.6
 -->
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
@@ -56,23 +56,25 @@
 </div>
 <article role="main">
 
+  {block:SearchPage}<!--{/block:SearchPage}
+  {block:TagPage}<!--{/block:TagPage}
   {block:IndexPage}
   <section id="about" class="contents-section">
     <a name="about"></a>
     <h2>About Me</h2>
     <h3>Personal Info</h3>
-    <ul class="circle-list">
+    <ul>
       <li>Atsushi OHO</li>
       <li>PhD student in the Linguistics Department at Rutgers University&nbsp;&nbsp;&nbsp;(2010 - Present)</li>
       <li>B.A. in Linguistics, Liberal Arts, International Christian University, Tokyo, Japan&nbsp;&nbsp;&nbsp;(2006 - 2010)</li>
     </ul>
     <h3>Areas of Interests</h3>
-    <ul class="circle-list">
+    <ul>
       <li>Semantics, Pragmatics, Syntax and their interfaces</li>
        <li>Psycholinguistics, Cognitive Science</li>
     </ul>
     <h3>Research Topics</h3>
-    <ul class="circle-list">
+    <ul>
       <li>Scope Interactions, Quantifiers, Questions, Evidentiality, Sentence Processing</li>
     </ul>
   </section>
@@ -80,36 +82,38 @@
   <section id="research" class="contents-section">
     <a name="research"></a>
     <h2>Research</h2>
+    <a name="papers"></a>
     <h3>Papers</h3>
-    <h4>Conference Proceedings - 2013</h4>
+    <h4>2013</h4>
     <ul>
       <li>“Scrambling and Dependent Interpretations in Multiple Wh-questions in Japanese” In Proceedings of Formal Approaches to Japanese Linguistics 6 (FAJL 6), pp133-144, MITWPL.&nbsp;&nbsp;&nbsp;<a href="" target="_blank" class="link-button" title="PDF">{pdf}</a></li>
     </ul>
-    <span><a href="/tagged/papers" class="post-more" title="See more">More&nbsp;&gt;&gt;</a></span>
+    <span><a href="/tagged/papers" class="page-linker" title="See more">More&nbsp;&gt;&gt;</a></span>
+
+    <a name="presentations"></a>
     <h3>Presentations</h3>
-    <h4>Conference Presentations - 2014</h4>
+    <h4>2014</h4>
     <ul>
       <li>“On Biases on Biased Polar Questions in Japanese” (poster), 7th Formal Approaches to Japanese Linguistics (FAJL7), International Christian University &amp; National Institute for Japanese Language and Linguistics, Tokyo, Japan, June 27-29.&nbsp;&nbsp;&nbsp;<a href="" target="_blank" class="link-button" title="Poster">{poster}</a></li>
     </ul>
-    <h4>Conference Presentations - 2012</h4>
+    <h4>2012</h4>
     <ul>
       <li>“Scrambling and Dependent Interpretations in Multiple Wh-questions in Japanese” (alternate talk), 6th Formal Approaches to Japanese Linguistics (FAJL6), ZAS, Berlin, Germany, September 26-28.&nbsp;&nbsp;&nbsp;<a href="" target="_blank" class="link-button" title="Poster">{poster}</a></li>
     </ul>
-    <h4>Conference Presentations - 2011</h4>
-    <ul>
-      <li>“Japanese Noun Phrase Reduplication Generates a Degree Expression.” (with Masahiro Yamada), 21st Japanese/Korean Linguistics Conference (JK21), Seoul National University, Korea, October 20-22.&nbsp;&nbsp;&nbsp;<a href="" target="_blank" class="link-button" title="Poster">{poster}</a></li>
-    </ul>
-    <h4>Department Presentations - 2012</h4>
     <ul>
       <li>"Scrambling and dependency in multiple wh-questions", RuLing VIII, April.&nbsp;&nbsp;&nbsp;<a href="" target="_blank" class="link-button" title="Slides">{slides}</a></li>
     </ul>
-    <span><a href="/tagged/presentations" class="post-more" title="See more">More&nbsp;&gt;&gt;</a></span>
+    <h4>2011</h4>
+    <ul>
+      <li>“Japanese Noun Phrase Reduplication Generates a Degree Expression.” (with Masahiro Yamada), 21st Japanese/Korean Linguistics Conference (JK21), Seoul National University, Korea, October 20-22.&nbsp;&nbsp;&nbsp;<a href="" target="_blank" class="link-button" title="Poster">{poster}</a></li>
+    </ul>
+    <span><a href="/tagged/presentations" class="page-linker" title="See more">More&nbsp;&gt;&gt;</a></span>
   </section>
 
   <section id="teaching" class="contents-section">
     <a name="teaching"></a>
     <h2>Teaching</h2>
-    <span><a href="/tagged/teaching" class="post-more" title="See more">More&nbsp;&gt;&gt;</a></span>
+    <span><a href="/tagged/teaching" class="page-linker" title="See more">More&nbsp;&gt;&gt;</a></span>
   </section>
   
   <section id="contact" class="contents-section">
@@ -132,6 +136,8 @@
     </section>
   </section>
   {/block:IndexPage}
+  {block:TagPage}-->{/block:TagPage}
+  {block:SearchPage}-->{/block:SearchPage}
 
   {block:TagPage}
   <section id="tag-page" class="{TagsAsClasses} contents-section">
@@ -142,13 +148,14 @@
       <li>{Body}</li>
     </ul>
     {/block:Text}{/block:Posts}
+    <span><a href="/#{Tag}" class="page-linker" title="Go back">&lt;&lt;&nbsp;Back</a></span>
   </section>
   {/block:TagPage}
 
   {block:SearchPage}
-  <section id="search-page">
-    <h2>Search results for: {SearchQuery}</h2>
-    <h4>{SearchResultCount} matched</h4>>
+  <section id="search-page" class="contents-section">
+    <h2>Search results for: <i>{SearchQuery}</i></h2>
+    <h4>{SearchResultCount} matched</h4>
   </section>
   {/block:SearchPage}
   

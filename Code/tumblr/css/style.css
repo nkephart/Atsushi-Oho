@@ -362,21 +362,6 @@ footer a {
   font-style: italic;
 }
 
-/* line 117, ../sass/partials/_typography.scss */
-a.post-more {
-  font-style: italic;
-  font-size: 13px;
-  font-size: 1.3rem;
-  -moz-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
-  -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
-}
-/* line 121, ../sass/partials/_typography.scss */
-a.post-more:hover {
-  color: #7f8db9;
-}
-
 /* line 3, ../sass/partials/_widgets.scss */
 .no-padding {
   padding: 0px 0px 0px 0px;
@@ -384,11 +369,6 @@ a.post-more:hover {
 }
 
 /* line 7, ../sass/partials/_widgets.scss */
-ul.circle-list {
-  list-style: circle;
-}
-
-/* line 11, ../sass/partials/_widgets.scss */
 a.link-button {
   color: #5769a0;
   border-bottom: dashed 1px #5769a0;
@@ -398,10 +378,25 @@ a.link-button {
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
-/* line 16, ../sass/partials/_widgets.scss */
+/* line 12, ../sass/partials/_widgets.scss */
 a.link-button:hover {
   color: #7f8db9;
   border-color: #7f8db9;
+}
+
+/* line 18, ../sass/partials/_widgets.scss */
+a.page-linker {
+  font-style: italic;
+  font-size: 13px;
+  font-size: 1.3rem;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+/* line 22, ../sass/partials/_widgets.scss */
+a.page-linker:hover {
+  color: #7f8db9;
 }
 
 /* line 3, ../sass/partials/_contact-form.scss */
