@@ -1,0 +1,16 @@
+@include keyframes(lilshake) {
+  0%, 100% {
+    @include transform(translateX(0));
+  }
+  17%, 50%, 83% {
+    @include transform(translateX(-5px));
+  }
+  33%, 67% {
+    @include transform(translateX(5px));
+  }
+}
+
+.shake {
+  @include animation-name(lilshake);
+  @include animation-duration(0.5s);
+}

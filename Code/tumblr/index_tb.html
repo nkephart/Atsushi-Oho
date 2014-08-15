@@ -45,7 +45,6 @@
     <nav role="navigation">
       <a href="/#about" class="ancher-scroll" title="About Me">About Me</a>
       <a href="/#research" class="ancher-scroll" title="Research">Research</a>
-      <a href="/#teaching" class="ancher-scroll" title="Teaching">Teaching</a>
       <a href="/#contact" class="ancher-scroll" title="Contact">Contact</a>
       <a href="" title="CV">CV</a>
       <form action="/search" method="get" class="search-form">
@@ -81,59 +80,36 @@
 
   <section id="research" class="contents-section">
     <a name="research"></a>
-    <h2>Research</h2>
-    <a name="papers"></a>
-    <h3>Papers</h3>
-    <h4>2013</h4>
+    <h2>Latest Research</h2>
+    {block:Posts}{block:Text}
+    {block:Title}<h4>{Title}{block:HasTags}&nbsp;&nbsp;&nbsp;{block:Tags}<a href="{TagURL}" class="page-linker" title="{Tag}">&nbsp;&nbsp;&nbsp;&#35;{Tag}</a>{/block:Tags}{/block:HasTags}</h4>{/block:Title}
     <ul>
-      <li>“Scrambling and Dependent Interpretations in Multiple Wh-questions in Japanese” In Proceedings of Formal Approaches to Japanese Linguistics 6 (FAJL 6), pp133-144, MITWPL.&nbsp;&nbsp;&nbsp;<a href="" target="_blank" class="link-button" title="PDF">{pdf}</a></li>
+      <li>{Body}</li>
     </ul>
-    <span><a href="/tagged/papers" class="page-linker" title="See more">More&nbsp;&gt;&gt;</a></span>
-
-    <a name="presentations"></a>
-    <h3>Presentations</h3>
-    <h4>2014</h4>
-    <ul>
-      <li>“On Biases on Biased Polar Questions in Japanese” (poster), 7th Formal Approaches to Japanese Linguistics (FAJL7), International Christian University &amp; National Institute for Japanese Language and Linguistics, Tokyo, Japan, June 27-29.&nbsp;&nbsp;&nbsp;<a href="" target="_blank" class="link-button" title="Poster">{poster}</a></li>
-    </ul>
-    <h4>2012</h4>
-    <ul>
-      <li>“Scrambling and Dependent Interpretations in Multiple Wh-questions in Japanese” (alternate talk), 6th Formal Approaches to Japanese Linguistics (FAJL6), ZAS, Berlin, Germany, September 26-28.&nbsp;&nbsp;&nbsp;<a href="" target="_blank" class="link-button" title="Poster">{poster}</a></li>
-    </ul>
-    <ul>
-      <li>"Scrambling and dependency in multiple wh-questions", RuLing VIII, April.&nbsp;&nbsp;&nbsp;<a href="" target="_blank" class="link-button" title="Slides">{slides}</a></li>
-    </ul>
-    <h4>2011</h4>
-    <ul>
-      <li>“Japanese Noun Phrase Reduplication Generates a Degree Expression.” (with Masahiro Yamada), 21st Japanese/Korean Linguistics Conference (JK21), Seoul National University, Korea, October 20-22.&nbsp;&nbsp;&nbsp;<a href="" target="_blank" class="link-button" title="Poster">{poster}</a></li>
-    </ul>
-    <span><a href="/tagged/presentations" class="page-linker" title="See more">More&nbsp;&gt;&gt;</a></span>
-  </section>
-
-  <section id="teaching" class="contents-section">
-    <a name="teaching"></a>
-    <h2>Teaching</h2>
-    <span><a href="/tagged/teaching" class="page-linker" title="See more">More&nbsp;&gt;&gt;</a></span>
+    {/block:Text}{/block:Posts}
+    <span>More of:<a href="" class="page-linker" title="">&nbsp;&nbsp;&nbsp;&#35;sometag</a></span>
   </section>
   
   <section id="contact" class="contents-section">
     <a name="contact"></a>
     <h2>Contact</h2>
-    <section id="contact-form-wrapper">
-      <iframe class="contact-form" width="100%" height="300" frameborder="0" marginheight="0" marginwidth="0" src="https://dl.dropboxusercontent.com/u/2997478/ao-samples/contact-form%20_tbpublic.html">Loading&hellip;</iframe>
-    </section>
-    <section id="alt-contact-wrapper">
-      <h3>E-Mail</h3>
-      <a class="link-button" href="mailto:aoho@rutgers.edu" title="Compose Mail">aoho [at] rutgers [dot] edu</a></a>
-      <h3>Mailing Address</h3>
-      <ul class="no-padding">
-        <li>Linguistics Department</li>
-        <li>Rutgers University</li>
-        <li>18 Seminary Place</li>
-        <li>New Brunswick</li>
-        <li>NJ 08901, USA</li>
-      </ul>
-    </section>
+    <div id="contact-wrapper">
+      <section id="contact-form-wrapper">
+        <iframe class="contact-form" width="100%" height="300" frameborder="0" marginheight="0" marginwidth="0" src="https://dl.dropboxusercontent.com/u/2997478/ao-samples/contact-form%20_tbpublic.html">Loading&hellip;</iframe>
+      </section>
+      <section id="alt-contact-wrapper">
+        <h3>E-Mail</h3>
+        <a class="link-button" href="mailto:aoho@rutgers.edu" title="Compose Mail">aoho [at] rutgers [dot] edu</a></a>
+        <h3>Mailing Address</h3>
+        <ul class="no-padding">
+          <li>Linguistics Department</li>
+          <li>Rutgers University</li>
+          <li>18 Seminary Place</li>
+          <li>New Brunswick</li>
+          <li>NJ 08901, USA</li>
+        </ul>
+      </section>
+    </div>
   </section>
   {/block:IndexPage}
   {block:TagPage}-->{/block:TagPage}
@@ -148,7 +124,7 @@
       <li>{Body}</li>
     </ul>
     {/block:Text}{/block:Posts}
-    <span><a href="/#{Tag}" class="page-linker" title="Go back">&lt;&lt;&nbsp;Back</a></span>
+    <span><a href="/#research" class="page-linker" title="Go back">&lt;&lt;&nbsp;Back</a></span>
   </section>
   {/block:TagPage}
 
@@ -175,14 +151,13 @@
 <script type="text/javascript"> // Load Google Analytics script
   $(window).on('load',function(){
     $.getScript('//www.google-analytics.com/analytics.js');
+    // Minimized Google Analytics code
+    ga = function(){
+      ga.q.push(arguments);
+    };
+    ga.q = [['create', 'UA-53010814-1', 'auto'], ['send', 'pageview']]
+    ga.l = 1 * new Date();
   });
-</script>
-<script type="text/javascript"> // Minimized Google Analytics code
-  ga = function(){
-    ga.q.push(arguments);
-  };
-  ga.q = [['create', 'UA-53010814-1', 'auto'], ['send', 'pageview']]
-  ga.l = 1 * new Date();
 </script>
 <script type="text/javascript"> // Smooth scrolling effect
   $(function() {

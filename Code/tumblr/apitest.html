@@ -1,0 +1,28 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+<meta name="robots" content="all">
+<meta name="keywords" content="">
+<meta name="author" content="Atsushi OHO">
+<!-- General settings -->
+<title>apitest.html</title>
+<!-- CSS files -->
+<link rel="stylesheet" type="text/css" href="https://dl.dropboxusercontent.com/u/2997478/ao-samples/css/vendor/normalize.css">
+<link rel="stylesheet" type="text/css" href="https://dl.dropboxusercontent.com/u/2997478/ao-samples/css/style.css">
+</head>
+<body>
+<!-- jQuery libs and scripts -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+  url = 'atsushioho.tumblr.com';
+  key = 'IXFjOnZNoyT1rq6jbXMrh5ILAfEvtS7ajQwnJ1dzkJqpJWG0MW';
+  $.ajax({
+    url: 'http://api.tumblr.com/v2/blog/' + url + '/info?api_key=' + key,
+    dataType: 'jsonp',
+    success: function(output){
+      console.log(output);
+    }
+  });
+</script>
+</body>
+</html>

@@ -45,14 +45,16 @@
 function checkForm(){
   var status=false;     
   var emailRegEx=/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-  
+
   if(document.forms['ss-form']['entry.1902549149'].value==""||document.forms['ss-form']['entry.441788654'].value==""){
-//    alert("Please input the required fields");
+    $('#ss-submit').replaceWith($('#ss-submit').clone(true));
+    $('#ss-submit').addClass('shake');
     $('.notification').css({display:'none'});
     $('.field-warning').css({display:'initial'}).animate({opacity:'1'},150,'linear');
   }
   else if(document.forms['ss-form']['entry.441788654'].value.search(emailRegEx)==-1){
-//    alert("Invalid E-mail address format");
+    $('#ss-submit').replaceWith($('#ss-submit').clone(true));
+    $('#ss-submit').addClass('shake');
     $('.notification').css({display:'none'});
     $('.email-warning').css({display:'initial'}).animate({opacity:'1'},150,'linear');
   }

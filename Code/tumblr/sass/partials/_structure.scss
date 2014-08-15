@@ -83,11 +83,15 @@ section.contents-section {
   @include margin(0,0,5.5);
 }
 
-/* About section*/
+/* Posts */
+
+.post-body p {
+  display: initial;
+}
 
 /* Contact section */
 
-#contact {
+#contact-wrapper {
   @include clearfix;
 }
 
