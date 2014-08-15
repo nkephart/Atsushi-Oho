@@ -2,9 +2,9 @@
 <!--
   01101011 01100001 01100001 01101101 01101111 01110011 
 
-  Designed and coded by Kaamos Craft
+  Kaamos Craft / design and code
   http://kaamoscraft.tumblr.com
-  Last updated 2014.08.15 / Ver 0.6
+  Last updated 2014.08.15 / Ver 0.7
 -->
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
@@ -44,11 +44,11 @@
     <a href="#" class="portrait top-scroll" title="Home"></a>
     <nav role="navigation">
       <a href="/#about" class="ancher-scroll" title="About Me">About Me</a>
-      <a href="/#research" class="ancher-scroll" title="Research">Research</a>
+      <a href="/#publication" class="ancher-scroll" title="Publication">Publication</a>
       <a href="/#contact" class="ancher-scroll" title="Contact">Contact</a>
       <a href="" title="CV">CV</a>
       <form action="/search" method="get" class="search-form">
-        <input type="text" placeholder="Search..." name="q" value="{SearchQuery}" />
+        <input type="text" placeholder="Search for..." name="q" value="{SearchQuery}" />
       </form>
     </nav>
   </header>
@@ -78,16 +78,16 @@
     </ul>
   </section>
 
-  <section id="research" class="contents-section">
-    <a name="research"></a>
-    <h2>Latest Research</h2>
+  <section id="publication" class="contents-section">
+    <a name="publication"></a>
+    <h2>Publication</h2>
     {block:Posts}{block:Text}
-    {block:Title}<h4>{Title}{block:HasTags}&nbsp;&nbsp;&nbsp;{block:Tags}<a href="{TagURL}" class="page-linker" title="{Tag}">&nbsp;&nbsp;&nbsp;&#35;{Tag}</a>{/block:Tags}{/block:HasTags}</h4>{/block:Title}
-    <ul>
+    {block:Title}<h4>{Title}</h4>{/block:Title}
+    <ul class="post-body">
       <li>{Body}</li>
+      {block:HasTags}<li>{block:Tags}<a href="{TagURL}" class="page-linker" title="{Tag}">&nbsp;&nbsp;&nbsp;&#35;{Tag}</a>{/block:Tags}{/block:HasTags}</li>
     </ul>
     {/block:Text}{/block:Posts}
-    <span>More of:<a href="" class="page-linker" title="">&nbsp;&nbsp;&nbsp;&#35;sometag</a></span>
   </section>
   
   <section id="contact" class="contents-section">
@@ -120,7 +120,7 @@
     <h2>{Tag}</h2>
     {block:Posts}{block:Text}
     {block:Title}<h4>{Title}</h4>{/block:Title}
-    <ul>
+    <ul class="post-body">
       <li>{Body}</li>
     </ul>
     {/block:Text}{/block:Posts}
@@ -130,8 +130,13 @@
 
   {block:SearchPage}
   <section id="search-page" class="contents-section">
-    <h2>Search results for: <i>{SearchQuery}</i></h2>
-    <h4>{SearchResultCount} matched</h4>
+    <h2>{SearchResultCount} search result(s) for "{SearchQuery}"</h2>
+    {block:Posts}{block:Text}
+    {block:Title}<h4>{Title}</h4>{/block:Title}
+    <ul class="post-body">
+      <li>{Body}</li>
+    </ul>
+    {/block:Text}{/block:Posts}
   </section>
   {/block:SearchPage}
   
@@ -148,10 +153,9 @@
     $('.contact-form').iFrameResize([{}]);
   });
 </script>
-<script type="text/javascript"> // Load Google Analytics script
+<script type="text/javascript"> // Minimized Google Analytics code
   $(window).on('load',function(){
     $.getScript('//www.google-analytics.com/analytics.js');
-    // Minimized Google Analytics code
     ga = function(){
       ga.q.push(arguments);
     };
@@ -177,3 +181,4 @@
 </script>
 </body>
 </html>
+
