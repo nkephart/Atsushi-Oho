@@ -1,0 +1,97 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+<meta name="robots" content="all">
+<meta name="keywords" content="">
+<title>apitest.html</title>
+</head>
+<body>
+<div id="output"></div>
+<!-- jQuery libs and scripts -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#output').tagListGen();
+});
+</script>
+<script type="text/javascript">
+(function($) {
+  $.fn.tagListGen = function() {
+  
+    var $this = null,
+    tags = [],
+    tagsList = [], 
+    tagsSeen = {},
+    tagsSorted = [],
+    postsTotal = 0, 
+    postsCount = 0,
+    tag = '', 
+    url = 'thereveriebook.tumblr.com';
+    key = 'IXFjOnZNoyT1rq6jbXMrh5ILAfEvtS7ajQwnJ1dzkJqpJWG0MW';
+  
+    function requestTags() {
+      $.ajax({
+        url: 'http://api.tumblr.com/v2/blog/' + url + '/posts?api_key=' + key,
+        dataType: 'JSONP',
+        data: {offset: postsCount},
+        success: processResponse
+      });
+    }
+
+    function processResponse(data) {
+      $this.empty();
+      $.each(data.response.posts, function(idx, post) {
+        if (post.tags && post.tags.length) {
+          for (var i = 0; i < post.tags.length; i++) {
+            tag = post.tags[i].replace(' ', '');
+            if (tagsSeen[tag]) {
+              tagsList[tagsSeen[tag]].count++;
+            } else {
+              tagsSeen[tag] = tagsList.length;
+              tagsList.push({
+                count: 1,
+                original: post.tags[i]
+              });
+            }
+          }
+        }
+      });
+            
+      // test if we need to fire up another request, generate output if not
+      postsTotal = data.response.blog.posts || 0;
+      if (postsCount < postsTotal) {
+        postsCount += 20;
+        requestTags();
+      } else {
+        renderTags();
+      }
+    }
+
+    function renderTags() {
+
+      // sort tags by frequency
+      tagsSorted = tagsList.sort(function(a, b) {
+        return b.count - a.count;
+      });
+      
+      $this.empty();
+      $.each(tagsSorted, function(idx, t) {
+        $this.append(
+          $('<a>').attr({
+              href: 'http://' + url + '/tagged/' + t.original,
+              title: t.original
+          })
+          .html(t.original)
+        );
+      });
+    }
+
+    return this.each(function() {
+      $this = $(this);
+      requestTags();
+    });
+  };
+})(jQuery);
+</script>
+</body>
+</html>

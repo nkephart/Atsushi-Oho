@@ -1,0 +1,78 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+<meta name="robots" content="all">
+<meta name="keywords" content="">
+<title>apitest.html</title>
+</head>
+<body>
+<div id="output"></div>
+<!-- jQuery libs and scripts -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  counter = 0;
+  tt = 0;
+  tp = 0;
+  tags = [];
+  output = "";
+  url = 'thereveriebook.tumblr.com';
+  key = 'IXFjOnZNoyT1rq6jbXMrh5ILAfEvtS7ajQwnJ1dzkJqpJWG0MW';
+
+  getTags();
+
+  function sortTags(){
+    inputTags = function(data){
+      for(var i = 0; i < data.response.posts.length; i++){
+        for(var j = 0; j < data.response.posts[i].tags.length; j++){
+          tags[tt] = data.response.posts[i].tags[j];
+          tt++;
+        }
+      }
+      if(counter >= tp){
+        outputTags(tags);
+      }
+    }
+    while(counter < tp){
+      $.ajax({
+        url: 'http://api.tumblr.com/v2/blog/' + url + '/posts?api_key=' + key,
+        dataType: 'jsonp',
+        data: {
+          offset: counter,
+          jsonp: "inputTags"
+        }
+      });
+      counter += 20
+    }
+  }
+
+  function outputTags(tags){
+    var unique = tags.filter(function(elem,pos){
+      return tags.indexOf(elem) == pos;
+    })
+console.log('tags:',tags);
+console.log('unique:',unique);
+    for(var k = 0; k < unique.length; k++){
+      var l = tags[k];
+      output += '&nbsp;&nbsp;&nbsp;<span>#'+l+'</span>';
+    }
+    $('#output').append(output);
+  }
+
+  function getTags(){
+    totalPosts = function(data){
+      tp = data.response.blog.posts;
+      sortTags();
+    }
+    $.ajax({
+      url: 'http://api.tumblr.com/v2/blog/' + url + '/posts?api_key=' + key,
+      dataType: 'jsonp',
+      data: {
+        jsonp: "totalPosts"
+      }
+    });
+  }
+});
+</script>
+</body>
+</html>

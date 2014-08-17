@@ -1,0 +1,84 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+<meta name="robots" content="all">
+<meta name="keywords" content="">
+<title>apitest.html</title>
+</head>
+<body>
+<div id="output"></div>
+<!-- jQuery libs and scripts -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  var counter = 0,
+  tt = 0,
+  tp = 0,
+  tags = new Array(),
+  output = "",
+  url = 'thereveriebook.tumblr.com',
+  key = 'IXFjOnZNoyT1rq6jbXMrh5ILAfEvtS7ajQwnJ1dzkJqpJWG0MW';
+
+  $.ajax({
+    type: 'GET',
+    cache: false,
+    url: 'http://api.tumblr.com/v2/blog/' + url + '/posts?api_key=' + key,
+    dataType: 'jsonp',
+    data: {
+      jsonp: 'totalPosts'
+    }
+  });
+console.log('jp');
+
+  totalPosts = function(data){
+    tp = data.response.blog.posts;
+    listTags();
+  }
+
+  function listTags(){
+console.log('lt');
+console.log('tp:',tp);
+console.log('counter:',counter);
+
+    while(counter < tp){
+      $.ajax({
+        type: 'GET',
+        cache: false,
+        url: 'http://api.tumblr.com/v2/blog/' + url + '/posts?api_key=' + key,
+        dataType: 'jsonp',
+        data:{
+          offset: counter,
+          jsonp: 'inputTags'
+        }
+      });
+      inputTags = function(data){
+console.log('inputTags');
+        for(var i = 0; i < data.response.posts.length; i++){
+          for(var j = 0; j < data.response.posts[i].tags.length; j++){
+            tags[tt] = data.response.posts[i].tags[j];
+            tt++;
+          }
+        }
+      }
+      counter += 20
+      sortTags();
+    }
+  }
+
+  function sortTags(){
+    var unique = tags.filter(function(elem,pos){
+      return tags.indexOf(elem) == pos;
+    })
+console.log('tags:',tags);
+console.log('unique:',unique);
+
+    for(var k = 0; k < unique.length; k++){
+      var l = unique[k];
+      output += '&nbsp;&nbsp;&nbsp;<span>#'+l+'<span>';
+    }
+    $('#output').append(output);
+  }
+});
+</script>
+</body>
+</html>

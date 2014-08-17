@@ -4,7 +4,7 @@
 
   Kaamos Craft / design and code
   http://kaamoscraft.tumblr.com
-  Last updated 2014.08.15 / Ver 0.7
+  Last updated 2014.08.17 / Ver 0.8
 -->
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
@@ -81,13 +81,18 @@
   <section id="publication" class="contents-section">
     <a name="publication"></a>
     <h2>Publication</h2>
+    <h3>Latest Activities</h3>
     {block:Posts}{block:Text}
     {block:Title}<h4>{Title}</h4>{/block:Title}
     <ul class="post-body">
       <li>{Body}</li>
-      {block:HasTags}<li>{block:Tags}<a href="{TagURL}" class="page-linker" title="{Tag}">&nbsp;&nbsp;&nbsp;&#35;{Tag}</a>{/block:Tags}{/block:HasTags}</li>
+      {block:HasTags}<li>{block:Tags}<a href="{TagURL}" class="page-linker" title="{Tag}">&#35;{Tag}</a>&nbsp;&nbsp;&nbsp;{/block:Tags}{/block:HasTags}</li>
     </ul>
     {/block:Text}{/block:Posts}
+    <h3>All Categories</h3>
+    <ul>
+      <li id="tag-list"></li>
+    </ul>
   </section>
   
   <section id="contact" class="contents-section">
@@ -151,6 +156,7 @@
 <script type="text/javascript">
   $(document).ready(function(){
     $('.contact-form').iFrameResize([{}]);
+    $('#tag-list').tagListGen();
   });
 </script>
 <script type="text/javascript"> // Minimized Google Analytics code
@@ -178,6 +184,92 @@
       return false;
 	});
   });
+</script>
+<script type="text/javascript">
+(function($) {
+  $.fn.tagListGen = function() {
+  
+    var $this = null,
+    tags = [],
+    tagsList = [], 
+    tagsSeen = {},
+    tagsSorted = [],
+    postsTotal = 0, 
+    postsCount = 0,
+    tag = '', 
+    url = 'thereveriebook.tumblr.com';
+    key = 'IXFjOnZNoyT1rq6jbXMrh5ILAfEvtS7ajQwnJ1dzkJqpJWG0MW';
+  
+    function requestTags() {
+      $this.append(
+        $('<span>').attr({
+          class: 'page-linker'
+        })
+        .html('Loading&hellip;')
+      );
+      $.ajax({
+        url: 'http://api.tumblr.com/v2/blog/' + url + '/posts?api_key=' + key,
+        dataType: 'JSONP',
+        data: {offset: postsCount},
+        success: processResponse
+      });
+    }
+
+    function processResponse(data) {
+      $this.empty();
+      $.each(data.response.posts, function(idx, post) {
+        if (post.tags && post.tags.length) {
+          for (var i = 0; i < post.tags.length; i++) {
+            tag = post.tags[i].replace(' ', '');
+            if (tagsSeen[tag]) {
+              tagsList[tagsSeen[tag]].count++;
+            } else {
+              tagsSeen[tag] = tagsList.length;
+              tagsList.push({
+                count: 1,
+                original: post.tags[i]
+              });
+            }
+          }
+        }
+      });
+            
+      // test if we need to fire up another request, generate output if not
+      postsTotal = data.response.blog.posts || 0;
+      if (postsCount < postsTotal) {
+        postsCount += 20;
+        requestTags();
+      } else {
+        renderTags();
+      }
+    }
+
+    function renderTags() {
+
+      // sort tags by frequency
+      tagsSorted = tagsList.sort(function(a, b) {
+        return b.count - a.count;
+      });
+      
+      $this.empty();
+      $.each(tagsSorted, function(idx, t) {
+        $this.append(
+          $('<a>').attr({
+              href: 'http://' + url + '/tagged/' + t.original,
+              class: 'page-linker',
+              title: t.original
+          })
+          .html('#'+t.original+'&nbsp;&nbsp;&nbsp;')
+        );
+      });
+    }
+
+    return this.each(function() {
+      $this = $(this);
+      requestTags();
+    });
+  };
+})(jQuery);
 </script>
 </body>
 </html>
