@@ -2,6 +2,10 @@
 
 @charset "UTF-8";
 
+// Reset CSS
+
+@import "vendor/normalize";
+
 // Partials
 
 @import "partials/base";
