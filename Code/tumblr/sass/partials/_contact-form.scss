@@ -1,36 +1,13 @@
 // Contact-form partial
 
-.form-wrapper {
-  margin: 0;
-  border: solid 1px #eee;
-  background: rgba(0,0,0,0.02);
-  @include padding(2.1);
-}
-
-.form-container {
-  @include display-flex;
-  @include flex-direction(row);
-  @include flex-wrap(wrap);
-  @include justify-content(space-between);
-  @include align-items(center);
-  @include align-content(space-between);
-}
-
-.form-bezil {
-  border: solid 1px #eee;
-  background-color: rgba(0,0,0,0.02);
-  @include padding(0.8);
-  &:nth-child {
-    width: 48%;
-  }
-  &:last-child {
-    width: 100%;
-  }
-}
-
 input, textarea {
   width: 100%;
-  margin: 0;
+  @include margin(0,0,2.1);
+}
+
+.form-warning {
+  border-color: $color-brown-40;
+  @include transition(all 0.1s ease-out);
 }
 
 #ss-submit {
@@ -47,34 +24,25 @@ input, textarea {
   }
 }
 
-#ss-submit-arrow {
+@include keyframes(progbtn) {
+  0% {width: 0%;}
+  100% {width: 100%;}
+}
+
+#ss-submit.sent {
   &:after {
     content: "";
     position: absolute;
-    top: -1px;
-    right: 13px;
-    border: solid 13px transparent;
-    border-left: solid 13px $color-blue-40;
-    z-index: -1;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: white;
+    @include animation-name(progbtn);
+    @include animation-duration(0.3s);
+    @include animation-timing-function(ease-out);
   }
-}
-
-#ss-submit-arrow.sent {
-  &:after {
-    content: "";
-    position: absolute;
-    top: -1px;
-    right: -27px;
-    border: solid 13px transparent;
-    border-left: solid 13px $color-blue-40;
-    z-index: 0;
-  }
-}
-
-input[type=text].warning,
-input[type=email].warning {
-  &:after {
-    content: '*Required';
-    position: absolute;
+  &:hover {
+    background: $color-blue-40;
+    border-color: $color-blue-40;
   }
 }
