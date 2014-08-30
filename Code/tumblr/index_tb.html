@@ -101,12 +101,29 @@
     <div id="contact-wrapper">
       <section id="contact-form-wrapper">
         <h3>Form</h3>
-        <iframe class="contact-form" width="100%" height="300" frameborder="0" marginheight="0" marginwidth="0" src="https://dl.dropboxusercontent.com/u/2997478/ao-samples/contact-form%20_tbpublic.html">Loading&hellip;</iframe>
+        <form action="https://docs.google.com/forms/d/1dEOSAopcxvSCyg9V_3R-V6Mk9VHAEPZmXUaUg6RnEzY/formResponse" method="post" name="ss-form" id="ss-form" class="form-container" target="submit_iframe" onsubmit="return checkForm()">
+          <iframe hidden name="submit_iframe" id="submit_iframe"></iframe>
+          <section>
+            <input type="text" size="30" name="entry.1902549149" placeholder="Your Name" id="entry_1902549149" dir="auto" aria-label="Name" aria-required="true" required>
+          </section>
+          <section>
+            <input type="email" size="30" name="entry.441788654" placeholder="Your E-mail Address" id="entry_441788654" dir="auto" aria-label="E-Mail Address" aria-required="true" required>
+          </section>
+          <section>
+            <textarea name="entry.723528064" rows="8" cols="50" placeholder="Your Message" id="entry_723528064" dir="auto" aria-label="Message"></textarea>
+          </section>
+          <section>
+            <input type="hidden" name="draftResponse" value="[,,&quot;5969303432463856438&quot;]">
+            <input type="hidden" name="pageHistory" value="0">
+            <input type="hidden" name="fbzx" value="5969303432463856438">
+            <button type="submit" name="submit" id="ss-submit">Submit</button>
+          </section>
+        </form>
       </section>
       <section id="contact-info-wrapper">
         <h3>E-Mail</h3>
         <a class="link-button" href="mailto:aoho@rutgers.edu" title="Compose Mail">aoho [at] rutgers [dot] edu</a></a>
-        <h3>Mailing Address</h3>
+        <h3>Post</h3>
         <ul class="no-padding">
           <li>Linguistics Department</li>
           <li>Rutgers University</li>
@@ -153,10 +170,10 @@
 </article>
 <!-- jQuery libs and scripts -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://dl.dropboxusercontent.com/u/2997478/ao-samples/js/iframe-resizer/js/iframeResizer.min.js"></script>
+<!--<script type="text/javascript" src="https://dl.dropboxusercontent.com/u/2997478/ao-samples/js/iframe-resizer/js/iframeResizer.min.js"></script>-->
 <script type="text/javascript">
   $(document).ready(function(){
-    $('.contact-form').iFrameResize([{}]);
+//    $('.contact-form').iFrameResize([{}]);
     $('#tag-list').tagListGen();
   });
 </script>
@@ -177,8 +194,11 @@
         var i = $(this).attr('href').substr(1);
         var j = $(i).offset().top;
         var k = $(window).width();
-        if (k < 1025) { // Consider margin-top of the compact layout
-          var j = j - 89;
+        if (k >= 700 && k < 1025) { // Consider margin-top of the compact layout
+          j = j - 89;
+        }
+        if (k < 700) {
+          j = j - 116;
         }
         $('html,body').animate({scrollTop:j},'fast');
         return false;
@@ -275,6 +295,46 @@
     });
   };
 })(jQuery);
+</script>
+<script type="text/javascript"> // Form checker
+function checkForm(){
+  var status=false;     
+  var emailRegEx=/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+
+  if(document.forms['ss-form']['entry.1902549149'].value=="" && document.forms['ss-form']['entry.441788654'].value==""){
+    $('#ss-submit').replaceWith($('#ss-submit').clone(true));
+    $('#ss-submit').addClass('shake');
+    $('input[type=text],input[type=email]').addClass('form-warning');
+    $('input[type=text]').attr('placeholder','Name required');
+    $('input[type=email]').attr('placeholder','E-mail address required');
+  }
+  else if(document.forms['ss-form']['entry.1902549149'].value==""){
+    $('#ss-submit').replaceWith($('#ss-submit').clone(true));
+    $('#ss-submit').addClass('shake');
+    $('input[type=email]').removeClass('form-warning');
+    $('input[type=text]').attr('placeholder','Name required');
+  }
+  else if(document.forms['ss-form']['entry.441788654'].value==""){
+    $('#ss-submit').replaceWith($('#ss-submit').clone(true));
+    $('#ss-submit').addClass('shake');
+    $('input[type=text]').removeClass('form-warning');
+    $('input[type=email]').addClass('form-warning');
+    $('input[type=email]').attr('placeholder','E-mail address required');
+  }
+  else if(document.forms['ss-form']['entry.441788654'].value.search(emailRegEx)==-1){
+    $('#ss-submit').replaceWith($('#ss-submit').clone(true));
+    $('#ss-submit').addClass('shake');
+    $('input[type=text]').removeClass('form-warning');
+    $('input[type=email]').addClass('form-warning');
+  }
+  else{
+    status=true;
+    $('#ss-submit').addClass('sent').attr('disabled',true);
+    $('input[type=text],input[type=email]').removeClass('form-warning');
+    setTimeout(function(){$('#ss-submit').html('Message sent')},300);
+  }
+  return status;
+}
 </script>
 </body>
 </html>
