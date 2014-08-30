@@ -5,16 +5,31 @@
 #header-container {
   position: fixed;
   top: 0;
+  width: 100%;
   background: #fafafa;
+  border-bottom: solid 1px #ddd;
   z-index: 100;
 }
 
 header {
+  height: 89px;
+  text-align: center;
   @include display-flex;
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(space-between);   
+  @include flex-wrap(wrap);
 }
 
 a.portrait {
+  display: none;
+  height: 64px;
+  width: 64px;
+  background: url("../img/portrait_pi_128.png") no-repeat 2px 2px;
   border: solid 3px #ddd;
+  @include background-size(64px);
+  @include flex(none);
+  @include margin(0,0,1.3);
   @include padding(0.2);
   @include border-radius(50%);
   @include box-sizing(content-box);
@@ -24,58 +39,54 @@ a.portrait {
   }
 }
 
-
-@media (max-width: 764px), (max-device-width: 764px) {
-  #header-container {
-    width: 100%;
-    border-bottom: solid 1px #ddd;
-    @include padding(0,2.1);
+#header-title {
+  @include flex(none);
+  @include justify-content(flex-start);
+  h1 {
+    margin: 0;
   }
+}
 
-  header {
-    height: 89px;
-    @include flex-direction(row);
-    @include align-items(center);
-    @include justify-content(space-between);
-    @include flex-wrap(wrap);
+nav {
+  a {
+    @include inline-block;
+    @include margin(0,0.8);
   }
-
-  a.portrait {
+  form {
     display: none;
-    height: 64px;
-    width: 64px;
-    background: url("../img/portrait_pi_128.png") no-repeat 2px 2px;
-    @include background-size(64px);
-    @include margin(0,0,1.3);
-    @include flex(none);
   }
+}
 
-  #header-title {
-    @include flex(none);
-    @include justify-content(flex-start);
-    h1 {
-      margin: 0;
-    }
+@media (min-width: 700px) {
+  #header-container {
+    @include padding(0,3.4);
+  }
+  
+  header {
+   text-align: left;
+   @include flex-direction(row);
   }
 
   nav {
-    a {
-      @include inline-block;
-      @include margin(0,0.8);
-    }
     form {
-      display: none;
+      display: inline-block;
+      @include margin(0,0,0,2.1);
+    }
+    input {
+      width: 140px;
+      margin: 0;
     }
   }
 }
 
-@media (min-width: 765px) {
+@media (min-width: 1025px) {
   #header-container {
     height: 100%;
     width: 230px;
     right: 0;
     padding: 0;
     border-left: solid 1px #ddd;
+    @include padding(0,2.1);
   }
 
   header {
@@ -89,6 +100,7 @@ a.portrait {
   }
 
   a.portrait {
+    display: block;
     height: 128px;
     width: 128px;
     background: url("../img/portrait_pi_128.png") no-repeat 2px 2px;
@@ -120,9 +132,6 @@ a.portrait {
     form {
       display: block;
       @include margin(3.4,0,0);
-      input {
-        width: 140px;
-      }
     }
   }
 }
@@ -133,18 +142,20 @@ article.contents-wrapper {
   width: auto;
   position: relative;
   z-index: 0;
-  @include padding(3.4,5.5,2.1);
+  @include margin(8.9,0,0);
+  @include padding(3.4,2.1,2.1);
 }
 
-@media (max-width: 764px), (max-device-width: 764px) {
+@media (min-width: 700px) {
   article.contents-wrapper {
-    @include margin(8.9,0,0);
+    @include padding(3.4,3.4,2.1);
   }
 }
 
-@media (min-width: 765px) {
+@media (min-width: 1025px) {
   article.contents-wrapper {
     @include margin(0,23,0,0);
+    @include padding(3.4,5.5,2.1);
   }
 }
 
@@ -164,42 +175,46 @@ section.contents-section {
   @include display-flex;
   @include align-items(flex-start);
   @include align-content(flex-start);
+  @include flex-direction(row);
+  @include justify-content(space-between);
 }
 
-#contact-form-wrapper,
-#alt-contact-wrapper {
-  @include flex(none);
-}
-
-@media (max-width: 764px), (max-device-width: 764px) {
-  #contact-wrapper {
-    @include flex-direction(column);
-    @include justify-content(center);
-  }
-
-  #contact-form-wrapper {
-    width: 100%;
-    h3 {
-      display: none;
-    }
-  }
-
-  #alt-contact-wrapper {
+#contact-form-wrapper {
+  @include flex-grow(0);
+  @inclide flex-shrink(0);
+  @include flex-basis(100%);
+  h3 {
     display: none;
   }
 }
 
-@media (min-width: 765px) {
-  #contact-wrapper {
-    @include flex-direction(row);
-    @include justify-content(space-between);
-  }
+#contact-info-wrapper {
+  display: none;
+}
 
-  #contact-form-wrapper,
-  #alt-contact-wrapper {
+@media (min-width: 700px) {
+  #contact-form-wrapper {
+    @include margin(0,3.4,0,0);
+    @include flex-grow(2);
+    @inclide flex-shrink(1);
+    @include flex-basis(0%);
+    h3 {
+      display: block;
+    }
+  }
+  
+  #contact-info-wrapper {
     display: initial;
-    width: 45%;
-  }  
+    @include flex-grow(1);
+    @inclide flex-shrink(1);
+    @include flex-basis(0%);
+  }
+}
+
+@media (min-width: 1025px) {
+  #contact-form-wrapper {
+    @include margin(0,5.5,0,0);
+  }
 }
 
 /* Article footer */

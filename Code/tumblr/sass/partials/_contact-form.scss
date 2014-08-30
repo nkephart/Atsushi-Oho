@@ -24,6 +24,14 @@ input, textarea {
   }
 }
 
+@media (min-width: 700px) {
+  #ss-submit {
+    width: 33.33%;
+    margin: 0;
+    @include inline-block;
+  }
+}
+
 @include keyframes(progbtn) {
   0% {width: 0%;}
   100% {width: 100%;}

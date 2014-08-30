@@ -103,7 +103,7 @@
         <h3>Form</h3>
         <iframe class="contact-form" width="100%" height="300" frameborder="0" marginheight="0" marginwidth="0" src="https://dl.dropboxusercontent.com/u/2997478/ao-samples/contact-form%20_tbpublic.html">Loading&hellip;</iframe>
       </section>
-      <section id="alt-contact-wrapper">
+      <section id="contact-info-wrapper">
         <h3>E-Mail</h3>
         <a class="link-button" href="mailto:aoho@rutgers.edu" title="Compose Mail">aoho [at] rutgers [dot] edu</a></a>
         <h3>Mailing Address</h3>
@@ -177,7 +177,7 @@
         var i = $(this).attr('href').substr(1);
         var j = $(i).offset().top;
         var k = $(window).width();
-        if (k < 800) { // Consider margin-top of the compact layout
+        if (k < 1025) { // Consider margin-top of the compact layout
           var j = j - 89;
         }
         $('html,body').animate({scrollTop:j},'fast');
