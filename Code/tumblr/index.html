@@ -4,7 +4,7 @@
 
   Kaamos Craft / design and code
   http://kaamoscraft.tumblr.com
-  Last updated 2014.08.30 / Ver 0.9
+  Last updated 2014.09.02 / Ver 0.93
 -->
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
@@ -45,7 +45,7 @@
     <a href="#" class="portrait top-scroll" title="Home"></a>
     <nav role="navigation">
       <a href="/#about" class="ancher-scroll" title="About Me">About Me</a>
-      <a href="/#publication" class="ancher-scroll" title="Publication">Publication</a>
+      <a href="/#research" class="ancher-scroll" title="Research">Research</a>
       <a href="/#contact" class="ancher-scroll" title="Contact">Contact</a>
       <a href="" title="CV">CV</a>
       <form action="/search" method="get" class="search-form">
@@ -63,27 +63,27 @@
     <a id="about"></a>
     <h2>About Me</h2>
     <h3>Personal Info</h3>
-    <ul>
+    <ul class="no-padding">
       <li>Atsushi OHO</li>
-      <li>PhD student in the Linguistics Department at Rutgers University&nbsp;&nbsp;&nbsp;(2010 - Present)</li>
-      <li>B.A. in Linguistics, Liberal Arts, International Christian University, Tokyo, Japan&nbsp;&nbsp;&nbsp;(2006 - 2010)</li>
+      <li>PhD student in the Linguistics Department at Rutgers University&nbsp;&nbsp;&nbsp;(2010 - Present).</li>
+      <li>B.A. in Linguistics, Liberal Arts, International Christian University, Tokyo, Japan&nbsp;&nbsp;&nbsp;(2006 - 2010).</li>
     </ul>
     <h3>Areas of Interests</h3>
-    <ul>
-      <li>Semantics, Pragmatics, Syntax and their interfaces</li>
-       <li>Psycholinguistics, Cognitive Science</li>
+    <ul class="no-padding">
+      <li>Semantics, Pragmatics, Syntax and their interfaces.</li>
+      <li>Psycholinguistics, Cognitive Science.</li>
     </ul>
     <h3>Research Topics</h3>
-    <ul>
-      <li>Scope Interactions, Quantifiers, Questions, Evidentiality, Sentence Processing</li>
+    <ul class="no-padding">
+      <li>Scope Interactions, Quantifiers, Questions, Evidentiality, Sentence Processing.</li>
     </ul>
   </section>
 
-  <section id="publication" class="contents-section">
-    <a id="publication"></a>
-    <h2>Publication</h2>
+  <section id="research" class="contents-section">
+    <a id="research"></a>
+    <h2>Research</h2>
     <h3>Categories</h3>
-    <ul>
+    <ul class="no-padding">
       <li id="tag-list"></li>
     </ul>
     <h3>Activities</h3>
@@ -148,7 +148,13 @@
       <li>{Body}</li>
     </ul>
     {/block:Text}{/block:Posts}
-    <span><a href="/#research" class="page-linker" title="Go back">&lt;&lt;&nbsp;Back</a></span>
+    {block:Pagination}
+    <footer class="pagination">
+      {block:PreviousPage}<a href="{PreviousPage}" class="page-linker page-previous" title="Previous">&lt;&lt;&nbsp;Previous</a>{/block:PreviousPage}
+      {block:NextPage}<a href="{NextPage}" class="page-linker page-next" title="Next">Next&nbsp;&gt;&gt;</a>{/block:NextPage}
+      <span class="page-count">{CurrentPage}&nbsp;/&nbsp;{TotalPages}</span>
+    </footer>
+    {/block:Pagination}
   </section>
   {/block:TagPage}
 
@@ -161,6 +167,13 @@
       <li>{Body}</li>
     </ul>
     {/block:Text}{/block:Posts}
+    {block:Pagination}
+    <footer class="pagination">
+      {block:PreviousPage}<a href="{PreviousPage}" class="page-linker page-previous" title="Previous">&lt;&lt;&nbsp;Previous</a>{/block:PreviousPage}
+      {block:NextPage}<a href="{NextPage}" class="page-linker page-next" title="Next">Next&nbsp;&gt;&gt;</a>{/block:NextPage}
+      <span class="page-count">{CurrentPage}&nbsp;/&nbsp;{TotalPages}</span>
+    </footer>
+    {/block:Pagination}
   </section>
   {/block:SearchPage}
   

@@ -175,6 +175,20 @@ section.contents-section {
   display: initial;
 }
 
+.pagination {
+  position: relative;
+  text-align: center;
+  @include margin(3.4,0,0);
+  .page-previous {
+    position: absolute;
+    left: 0;
+  }
+  .page-next {
+    position: absolute;
+    right: 0;
+  }
+}
+
 /* Contact section */
 
 #contact-wrapper {
@@ -225,7 +239,7 @@ section.contents-section {
 
 /* Article footer */
 
-footer {
+article > footer {
   text-align: center;
   p {
     margin: 0;

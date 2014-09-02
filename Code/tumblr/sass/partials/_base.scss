@@ -30,10 +30,6 @@ ul {
   list-style: none;
 }
 
-textarea {
-  resize: none;  
-}
-
 input, textarea, button {
   line-height: 1.615;
   border: solid 1px #ccc;
@@ -50,4 +46,8 @@ input, textarea, button {
     outline: none;
     border: solid 1px $color-blue-40;
   }
+}
+
+textarea {
+  resize: none;  
 }
