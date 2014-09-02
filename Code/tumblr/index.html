@@ -8,6 +8,7 @@
 -->
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="all">
 <meta name="keywords" content="">
 <meta name="description" content="{MetaDescription}">
@@ -81,11 +82,11 @@
   <section id="publication" class="contents-section">
     <a id="publication"></a>
     <h2>Publication</h2>
-    <h3>All Categories</h3>
+    <h3>Categories</h3>
     <ul>
       <li id="tag-list"></li>
     </ul>
-    <h3>Latest Activities</h3>
+    <h3>Activities</h3>
     {block:Posts}{block:Text}
     {block:Title}<h4>{Title}</h4>{/block:Title}
     <ul class="post-body">
@@ -104,13 +105,13 @@
         <form action="https://docs.google.com/forms/d/1dEOSAopcxvSCyg9V_3R-V6Mk9VHAEPZmXUaUg6RnEzY/formResponse" method="post" name="ss-form" id="ss-form" class="form-container" target="submit_iframe" onsubmit="return checkForm()">
           <iframe hidden name="submit_iframe" id="submit_iframe"></iframe>
           <section>
-            <input type="text" size="30" name="entry.1902549149" placeholder="Your Name" id="entry_1902549149" dir="auto" aria-label="Name" aria-required="true" required>
+            <input type="text" size="30" name="entry.1902549149" placeholder="Your Name" id="entry_1902549149" class="form-name" dir="auto" aria-label="Name" aria-required="true" required>
           </section>
           <section>
-            <input type="email" size="30" name="entry.441788654" placeholder="Your E-mail Address" id="entry_441788654" dir="auto" aria-label="E-Mail Address" aria-required="true" required>
+            <input type="email" size="30" name="entry.441788654" placeholder="Your E-mail Address" id="entry_441788654" class="form-email" dir="auto" aria-label="E-Mail Address" aria-required="true" required>
           </section>
           <section>
-            <textarea name="entry.723528064" rows="8" cols="50" placeholder="Your Message" id="entry_723528064" dir="auto" aria-label="Message"></textarea>
+            <textarea name="entry.723528064" rows="8" cols="50" placeholder="Your Message" id="entry_723528064" class="form-text" dir="auto" aria-label="Message"></textarea>
           </section>
           <section>
             <input type="hidden" name="draftResponse" value="[,,&quot;5969303432463856438&quot;]">
@@ -195,9 +196,9 @@
         if (k >= 700 && k < 1025) { // Consider margin-top of the compact layout
           j = j - 89;
         }
-        if (k < 700) {
-          j = j - 116;
-        }
+//        if (k < 700) {
+//          j = j - 116;
+//        }
         $('html,body').animate({scrollTop:j},'fast');
         return false;
       }
