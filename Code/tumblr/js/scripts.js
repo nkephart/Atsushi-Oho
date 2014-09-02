@@ -95,33 +95,33 @@ function checkForm(){
   if(document.forms['ss-form']['entry.1902549149'].value=="" && document.forms['ss-form']['entry.441788654'].value==""){
     $('#ss-submit').replaceWith($('#ss-submit').clone(true));
     $('#ss-submit').addClass('shake');
-    $('input[type=text],input[type=email]').addClass('form-warning');
-    $('input[type=text]').attr('placeholder','Name required');
-    $('input[type=email]').attr('placeholder','E-mail address required');
+    $('.form-name,.form-email').addClass('form-warning');
+    $('.form-name').attr('placeholder','Name required');
+    $('.form-email').attr('placeholder','E-mail address required');
   }
   else if(document.forms['ss-form']['entry.1902549149'].value==""){
     $('#ss-submit').replaceWith($('#ss-submit').clone(true));
     $('#ss-submit').addClass('shake');
-    $('input[type=email]').removeClass('form-warning');
-    $('input[type=text]').attr('placeholder','Name required');
+    $('.form-email').removeClass('form-warning');
+    $('.form-name').attr('placeholder','Name required');
   }
   else if(document.forms['ss-form']['entry.441788654'].value==""){
     $('#ss-submit').replaceWith($('#ss-submit').clone(true));
     $('#ss-submit').addClass('shake');
-    $('input[type=text]').removeClass('form-warning');
-    $('input[type=email]').addClass('form-warning');
-    $('input[type=email]').attr('placeholder','E-mail address required');
+    $('.form-name').removeClass('form-warning');
+    $('.form-email').addClass('form-warning');
+    $('.form-email').attr('placeholder','E-mail address required');
   }
   else if(document.forms['ss-form']['entry.441788654'].value.search(emailRegEx)==-1){
     $('#ss-submit').replaceWith($('#ss-submit').clone(true));
     $('#ss-submit').addClass('shake');
-    $('input[type=text]').removeClass('form-warning');
-    $('input[type=email]').addClass('form-warning');
+    $('.form-name').removeClass('form-warning');
+    $('.form-email').addClass('form-warning');
   }
   else{
     status=true;
     $('#ss-submit').addClass('sent').attr('disabled',true);
-    $('input[type=text],input[type=email]').removeClass('form-warning');
+    $('.form-name,.form-email').removeClass('form-warning');
     setTimeout(function(){$('#ss-submit').html('Message sent')},300);
   }
   return status;

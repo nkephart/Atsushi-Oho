@@ -37,6 +37,7 @@ textarea {
 input, textarea, button {
   line-height: 1.615;
   border: solid 1px #ccc;
+  -webkit-appearance: none;
   @include margin(0,0,2.1);
   @include padding(0.5,0.8);
   @include box-sizing(border-box);

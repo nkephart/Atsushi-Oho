@@ -3,23 +3,22 @@
 /* Header */
 
 #header-container {
-  position: fixed;
+  position: relative;
   top: 0;
   width: 100%;
   background: #fafafa;
   border-bottom: solid 1px #ddd;
   z-index: 100;
-  @include padding(1.3,0);
+  @include padding(0.8,0);
 }
 
 header {
-  height: 89px;
   text-align: center;
   @include display-flex;
   @include flex-direction(column);
   @include align-items(center);
   @include justify-content(space-between);   
-  @include flex-wrap(wrap);
+  @include flex-wrap(nowrap);
 }
 
 a.portrait {
@@ -60,12 +59,14 @@ nav {
 
 @media (min-width: 700px) {
   #header-container {
+    position: fixed;
     @include padding(0,3.4);
   }
   
   header {
-   text-align: left;
-   @include flex-direction(row);
+    height: 89px;
+    text-align: left;
+    @include flex-direction(row);
   }
 
   nav {
@@ -97,7 +98,6 @@ nav {
     @include flex-direction(column);
     @include align-items(center);
     @include justify-content(center);
-    @include flex-wrap(nowrap);
   }
 
   a.portrait {
@@ -144,13 +144,21 @@ article.contents-wrapper {
   max-width: 1000px;
   position: relative;
   z-index: 0;
-  @include margin(8.9,0,0);
   @include padding(3.4,2.1,2.1);
+}
+
+section.contents-section {
+  @include margin(0,0,5.5);
 }
 
 @media (min-width: 700px) {
   article.contents-wrapper {
+    @include margin(8.9,0,0);
     @include padding(3.4,3.4,2.1);
+  }
+
+  section.contents-section {
+    @include margin(0,0,8.9);
   }
 }
 
@@ -159,10 +167,6 @@ article.contents-wrapper {
     @include margin(0,23,0,0);
     @include padding(3.4,5.5,2.1);
   }
-}
-
-section.contents-section {
-  @include margin(0,0,8.9);
 }
 
 /* Posts */
