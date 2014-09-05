@@ -11,8 +11,8 @@
     postsTotal = 0, 
     postsCount = 0,
     tag = '', 
-    url = 'thereveriebook.tumblr.com';
-    key = 'IXFjOnZNoyT1rq6jbXMrh5ILAfEvtS7ajQwnJ1dzkJqpJWG0MW';
+    url = 'atsushioho.tumblr.com';
+    key = 'IXFjOnZNoyT1rq6jbXMrh5ILAfEvtS7ajQwnJ1dzkJqpJWG0MW ';
   
     function requestTags() {
       $this.append(
