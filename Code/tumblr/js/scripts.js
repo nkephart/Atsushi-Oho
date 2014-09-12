@@ -92,27 +92,27 @@ function checkForm(){
   var status=false;     
   var emailRegEx=/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 
-  if(document.forms['ss-form']['entry.1902549149'].value=="" && document.forms['ss-form']['entry.441788654'].value==""){
+  if(document.forms['ss-form']['entry.2058703109'].value=="" && document.forms['ss-form']['entry.1837500272'].value==""){
     $('#ss-submit').replaceWith($('#ss-submit').clone(true));
     $('#ss-submit').addClass('shake');
     $('.form-name,.form-email').addClass('form-warning');
     $('.form-name').attr('placeholder','Name required');
     $('.form-email').attr('placeholder','E-mail address required');
   }
-  else if(document.forms['ss-form']['entry.1902549149'].value==""){
+  else if(document.forms['ss-form']['entry.2058703109'].value==""){
     $('#ss-submit').replaceWith($('#ss-submit').clone(true));
     $('#ss-submit').addClass('shake');
     $('.form-email').removeClass('form-warning');
     $('.form-name').attr('placeholder','Name required');
   }
-  else if(document.forms['ss-form']['entry.441788654'].value==""){
+  else if(document.forms['ss-form']['entry.1837500272'].value==""){
     $('#ss-submit').replaceWith($('#ss-submit').clone(true));
     $('#ss-submit').addClass('shake');
     $('.form-name').removeClass('form-warning');
     $('.form-email').addClass('form-warning');
     $('.form-email').attr('placeholder','E-mail address required');
   }
-  else if(document.forms['ss-form']['entry.441788654'].value.search(emailRegEx)==-1){
+  else if(document.forms['ss-form']['entry.1837500272'].value.search(emailRegEx)==-1){
     $('#ss-submit').replaceWith($('#ss-submit').clone(true));
     $('#ss-submit').addClass('shake');
     $('.form-name').removeClass('form-warning');
