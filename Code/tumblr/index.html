@@ -4,7 +4,7 @@
 
   Kaamos Craft / design and code
   http://kaamoscraft.tumblr.com
-  Last updated 2014.09.11 / Ver 0.95
+  Last updated 2014.09.13 / Ver 0.96
 -->
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
@@ -26,8 +26,8 @@
 <link rel="apple-touch-icon" href="{PortraitURL-128}">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}">
 <!-- Font settings -->
-<script type="text/javascript" src="//use.typekit.net/dkj2omi.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script src="//use.typekit.net/aia1tci.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
 <!-- CSS files and additions -->
 <link rel="stylesheet" type="text/css" href="https://dl.dropboxusercontent.com/u/2997478/ao-samples/css/style.css">
 <style type="text/css">{CustomCSS}</style>
@@ -47,7 +47,7 @@
       <a href="/#about" class="ancher-scroll" title="About Me">About Me</a>
       <a href="/#research" class="ancher-scroll" title="Research">Research</a>
       <a href="/#contact" class="ancher-scroll" title="Contact">Contact</a>
-      <a href="" title="CV">CV</a>
+      <a href="https://docs.google.com/uc?export=download&id=0BzJ85gfBqH38T090aTJyUkVaY1E" title="CV" target="_blank">CV</a>
       <form action="/search" method="get" class="search-form">
         <input type="text" placeholder="Search for..." name="q" value="{SearchQuery}" />
       </form>
@@ -91,7 +91,7 @@
     {block:Title}<h4>{Title}</h4>{/block:Title}
     <ul class="post-body">
       <li>{Body}</li>
-      {block:HasTags}<li>{block:Tags}<a href="{TagURL}" class="page-linker" title="{Tag}">&#35;{Tag}</a>&nbsp;&nbsp;&nbsp;{/block:Tags}{/block:HasTags}</li>
+      {block:HasTags}<li class="tag-wrapper">{block:Tags}<a href="{TagURL}" class="tag-button" title="{Tag}">&#35;{Tag}</a>&nbsp;&nbsp;&nbsp;{/block:Tags}{/block:HasTags}</li>
     </ul>
     {/block:Text}{/block:Posts}
   </section>

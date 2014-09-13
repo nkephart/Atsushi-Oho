@@ -1,7 +1,5 @@
 // Typography partial
 
-/* General settings */
-
 %text-base {
   font-weight: 400; 
   font-style: normal;
@@ -25,7 +23,7 @@ a, form, li, p, span, td, ul, h4, h5 {
   @extend %text-sans-serif;
   font-weight: 300;
   text-decoration: none;
-  @include font-size(1.6);
+  @include font-size(1.7);
 }
 
 li {
@@ -59,7 +57,7 @@ h2 {
 
 h3 {
   @extend %text-sans-serif;
-  @include font-size(1.6);
+  @include font-size(1.7);
   a {
     @extend h3;
     @include transition(all 0.1s ease-in-out);
@@ -82,7 +80,7 @@ input, textarea, button {
     @extend %text-serif;
     font-style: italic;
     color: $color-brown-80;
-    @include font-size(1.6);
+    @include font-size(1.7);
   }
   &:after {
     @extend %text-serif;
@@ -92,7 +90,7 @@ input, textarea, button {
 
 nav {
   @extend %text-sans-serif;
-  @include font-size(1.6);
+  @include font-size(1.7);
   a {
     @extend nav;
     color: $color-grey-60;
